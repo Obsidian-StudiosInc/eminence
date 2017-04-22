@@ -1,0 +1,6 @@
+build.sh
+.orig/
+*png
+*edc
+*wav
+
