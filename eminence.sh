@@ -3,12 +3,13 @@
 # 51 153 255 -> 150 110 220
 # 3399ff     -> 966edc
 
+shopt -s extglob
+
 EDJS=( elementary terminology )
 
 cleanup() {
 	rm -fr .orig
-	shopt -s extglob
-	rm -fr !(eminence.sh)
+	rm -fr !(eminence.sh|LICENSE|README.md)
 }
 
 process_edj() {
@@ -35,7 +36,7 @@ process_edj() {
 
 	local p PNGS DEST
 	if [[ "${1}" == "elementary" ]]; then
-		DEST=~/.elementary/themes/eminence.edj
+		DEST="${1}"
 		sed -i -e 's|"Dark"|"Eminence"|' \
 			-e 's|"The|"Purple theme based on the|' \
 			edc/about-theme.edc
@@ -207,7 +208,7 @@ process_edj() {
 			win_glow
 	)
 	elif [[ "${1}" == "terminology" ]]; then
-		DEST=~/.config/terminology/themes/eminence.edj
+		DEST="config/${1}"
 		PNGS=(
 			icon_about
 			icon_close
@@ -230,7 +231,8 @@ process_edj() {
 		convert "${orig}" -modulate 110,72,128 "${p}.png"
 	done
 
-	edje_cc $@ -id . -fd . eminence.edc -o ${DEST}
+	edje_cc -id . -fd . eminence.edc -o \
+		"${HOME}/.${DEST}/themes/eminence.edj"
 
 	cleanup
 }
