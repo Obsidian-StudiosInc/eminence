@@ -8,6 +8,11 @@
 # 51 153 255 -> 150 110 220
 # 3399ff     -> 966edc
 
+# Purple color variables
+RGB="150 110 220"
+HTML="966edc"
+HSB="110,72,128"
+
 shopt -s extglob
 
 EDJS=( elementary terminology )
@@ -34,8 +39,8 @@ process_edj() {
 	local f FILES
 	FILES=( $(find . -name '*.edc' -type f -print) )
 	for f in "${FILES[@]}"; do
-		sed -i -e 's|51 153 255|150 110 220|g' \
-			-e 's|3399ff|966edc|g' \
+		sed -i -e "s|51 153 255|${RGB}|g" \
+			-e "s|3399ff|${HTML}|g" \
 			"${f}"
 	done
 
@@ -233,7 +238,7 @@ process_edj() {
 	for p in "${PNGS[@]}"; do
 		orig=".orig/${p}.png"
 		[[ ! -f "${orig}" ]] && mv "${p}.png" "${orig}"
-		convert "${orig}" -modulate 110,72,128 "${p}.png"
+		convert "${orig}" -modulate "${HSB}" "${p}.png"
 	done
 
 	edje_cc -id . -fd . eminence.edc -o \
