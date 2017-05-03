@@ -17,7 +17,8 @@ Enlightenment Arc theme, and Arc themes in general.
 
 This theme has evolved to more than just color modifications to the 
 default them. It will be a semi hybrid between the default them, Arc, 
-and personal preferences.
+and personal preferences. When the theme is ready for prime time, edj 
+files will be generated via travis on tag and available in the releases.
 
 ```
 ~/.elementary/themes/eminence.edj
@@ -25,7 +26,7 @@ and personal preferences.
 ```
 
 ## Usage
-Addiontional instructions and maybe help/options output will be added 
+Additional instructions and maybe help/options output will be added  
 later. For now simply
 
 ```
