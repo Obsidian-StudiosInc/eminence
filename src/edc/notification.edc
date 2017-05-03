@@ -1,0 +1,280 @@
+group { name: "e/modules/notification/logo";
+   images.image: "glow_exclam.png" COMP;
+   parts {
+      part { name: "base"; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            image.normal: "glow_exclam.png";
+            max: 48 48;
+            aspect: 1.0 1.0;
+         }
+      }
+   }
+}
+
+group { name: "e/modules/notification/main";
+   images.image: "bg-rounded-3px@4.png" COMP;
+   images.image: "border-rounded-3px@4.png" COMP;
+   data.item: "app_icon_max" "48 48";
+   data.item: "shaped" "1";
+   styles {
+      style { name: "notification_style_nowrap";
+         base: "font="FN" font_size=10 align=left color=#ffff wrap=none text_class=notification_body";
+         tag:  "subject"  "+ text_class=module_large style=glow color=#966edcff align=center";
+         tag:  "body"  "+ text_class=module_normal";
+         tag:  "br" "\n";
+         tag:  "ps" "ps";
+         tag:  "b" "+ font="FNBD" text_class=module_bold";
+         tag:  "i" "+ font="FNIT" text_class=module_italic";
+         tag:  "u" "+ underline=on underline_color=#966edcff";
+         tag:  "img" ""; // images not supported
+         tag:  "a" ""; // links not supported
+      }
+      style { name: "notification_style";
+         base: "font="FN" font_size=10 align=left color=#ffff wrap=word text_class=notification_body";
+         tag:  "subject"  "+ text_class=module_large color=#966edcff glow_color=#966edc18 align=center";
+         tag:  "body"  "+ text_class=module_normal";
+         tag:  "br" "\n";
+         tag:  "ps" "ps";
+         tag:  "b" "+ font="FNBD" text_class=module_bold";
+         tag:  "i" "+ font="FNIT" text_class=module_italic";
+         tag:  "u" "+ underline=on underline_color=#966edcff";
+         tag:  "img" ""; // images not supported
+         tag:  "a" ""; // links not supported
+      }
+   }
+
+   parts {
+      rect { "clip";
+         scale: 1;
+         desc { "default";
+            color: 255 255 255 255;
+            rel1.relative: 0.0 0.0;
+            rel1.offset: -15 0;
+            rel2.relative: 1.0 1.0;
+            rel2.offset: 15 0;
+         }
+      }
+      image { "base";
+         clip_to: "clip";
+         desc { state: "default" 0.0;
+            image.normal: "bg-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
+            image.middle: 1;
+            rel1.relative: 1.0 0.0;
+            rel2.relative: 2.0 1.0;
+            rel1.offset: 4 3;
+            rel2.offset: -5 -4;
+            fill.smooth: 0;
+            color_class: "popup_bg";
+         }
+         desc {  state: "visible" 0.0;
+            inherit: "default";
+            rel1.relative: 0.0 0.0;
+            rel2.relative: 1.0 1.0;
+         }
+         desc { state: "fade_out" 0.0;
+            inherit: "default" 0.0;
+         }
+      }
+      image { "border"; nomouse;         scale: 1;
+         clip_to: "clip";
+         desc { "default";
+            image.normal: "border-rounded-3px@4.png";
+            image.border: 12 12 12 12;
+            image.border_scale: 1;
+            image.border_scale_by: 0.25;
+            image.middle: 0;
+            rel.to: "base";
+            color_class: "popup_border";
+         }
+      }
+      part { name: "titleclip";
+         clip_to: "clip";
+         type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to_y: "base";
+            rel2.to_x: "e.event.close";
+            rel2.relative: 0.0 1.0;
+         }
+      }
+      part { name: "bodyclip";
+         scale: 1;
+         clip_to: "clip";
+         type: RECT;
+         description { state: "default" 0.0;
+            rel.to: "base";
+            rel2.offset: -13 -13;
+            min: 220 80;
+         }
+      }
+      part { name: "notification.swallow.app_icon";
+         scale: 1;
+         clip_to: "clip";
+         type: SWALLOW;
+         mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.0 0.5;
+            aspect: 1.0 1.0;
+            aspect_preference: BOTH;
+            rel1.offset: 12 12;
+            rel2.offset: 12 -13;
+            rel.to: "base";
+            rel2.relative: 0.0 1.0;
+            min: 24 24;
+            fixed: 1 1;
+         }
+      }
+      part { name: "notification.textblock.message";
+         scale: 1;
+         clip_to: "clip";
+         type: TEXTBLOCK;
+         mouse_events: 0;
+         clip_to: "bodyclip";
+         description { state: "default" 0.0;
+            align: 0.0 0.0;
+            rel1.to_x: "notification.swallow.app_icon";
+            rel1.to_y: "notification.text.title";
+            rel1.relative: 1.0 1.0;
+            rel1.offset: 4 4;
+            rel2.to: "base";
+            rel2.offset: -27 -11;
+            color_class: "popup_text";
+            text {
+               style: "notification_style";
+               min: 0 1;
+            }
+            fixed: 1 1;
+         }
+      }
+      part { name: "message";
+         scale: 1;
+         // clip_to: "clip";
+         type: TEXTBLOCK;
+         mouse_events: 0;
+         description { state: "default" 0.0;
+            align: 0.0 0.0;
+            max: 500 99999;
+            rel1.to_x: "notification.swallow.app_icon";
+            rel1.to_y: "notification.text.title";
+            rel1.relative: 1.0 1.0;
+            rel1.offset: 4 4;
+            rel2.offset: -27 -11;
+            color_class: "popup_text";
+            text {
+               style: "notification_style_nowrap";
+               text_source: "notification.textblock.message";
+               min: 0 1;
+            }
+            visible: 0;
+            fixed: 1 1;
+         }
+      }
+      part { name: "notification.text.title";
+         type: TEXT;
+         mouse_events: 0;
+         clip_to: "titleclip";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to_x: "notification.swallow.app_icon";
+            rel1.to_y: "base";
+            rel1.relative: 1.0 0.0;
+            rel1.offset: 4 12;
+            rel2.relative: 0.0 0.0;
+            rel2.to_x: "e.event.close";
+            rel2.to_y: "base";
+            rel2.offset: -5 12;
+            align: 0.0 0.0;
+            color_class: "popup_title_text";
+            text {
+               font: FNBD;
+               size: FNSIZE;
+               min: 0 1;
+               align: 0.0 0.5;
+               text_class: "notification_title";
+            }
+            fixed: 0 1;
+         }
+      }
+      part { name: "close"; type: GROUP;
+         clip_to: "clip";
+         scale: 1;
+         source: "e/border/btn-close";
+         description { state: "default" 0.0;
+            rel.to: "base";
+            rel1.relative: 1.0 0.0;
+            rel1.offset: -13 12;
+            rel2.relative: 1.0 0.0;
+            rel2.offset: -13 12;
+            align: 1.0 0.0;
+            min: 15 15;
+            aspect: 1 1;
+            color: 0 0 0 0;
+            fixed: 1 1;
+         }
+      }
+      alias: "e.event.close" "close:base";
+   }
+   programs {
+      program {
+         signal: "mouse,down,1";
+         source: "e.event.close";
+         action: STATE_SET "selected" 0.0;
+         target: "close";
+      }
+      program {
+         signal: "mouse,up,1";
+         source: "e.event.close";
+         action: STATE_SET "default" 0.0;
+         target: "close";
+      }
+
+      program {
+         signal: "mouse,clicked,1";
+         source: "e.event.close";
+         after: "fade_out";
+      }
+      program { name: "emit_close";
+         action: SIGNAL_EMIT "notification,close" "theme";
+      }
+      program { name: "fade_out";
+         action: STATE_SET "fade_out" 0.0;
+         target: "base";
+         // target: "clip";
+         transition: LINEAR 0.3;
+         after: "emit_close";
+      }
+      program {
+         signal: "mouse,clicked,1";
+         source: "base";
+         action: SIGNAL_EMIT "notification,find" "theme";
+      }
+      //      program {
+      //         signal: "notification,new"; source: "notification";
+      //      }
+      program {
+         signal: "notification,close"; source: "notification";
+         after: "fade_out";
+      }
+      program {
+         signal: "notification,deleted"; source: "notification";
+         after: "fade_out";
+      }
+      program {
+         signal: "show";
+         source: "";
+         in: 0.2 0.0;
+         after: "fade_in";
+      }
+
+      program { name: "fade_in";
+         action: STATE_SET "visible" 0.0;
+         target: "base";
+         // in: 0.1 0.0;
+         transition: LINEAR 0.5;
+      }
+   }
+}

@@ -1,0 +1,122 @@
+#define IMAGE_SET(_NAME, _WIDTH, _HEIGHT) \
+      images.set { \
+         name: _NAME; \
+         image { \
+            image: _NAME".png" COMP; \
+            size: 0 0 _WIDTH _HEIGHT; \
+         } \
+         image { \
+            image: _NAME"@2.png" COMP; \
+            size: (_WIDTH + 1) (_HEIGHT + 1) (_WIDTH * 2) (_HEIGHT * 2); \
+         } \
+         image { \
+            image: _NAME"@4.png" COMP; \
+            size:  (_WIDTH * 2 + 1) (_HEIGHT * 2 + 1) (_WIDTH * 8) (_HEIGHT * 8); \
+         } \
+      }
+
+#define IMAGE_SET_BORDER_ALT(_NAME, _WIDTH, _HEIGHT, _LEFT, _RIGHT, _TOP, _BOTTOM) \
+      images.set { \
+         name: _NAME; \
+         image { \
+            image: _NAME".png" COMP; \
+            size: 0 0 _WIDTH _HEIGHT; \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+         image { \
+            image: _NAME"@2.png" COMP; \
+            size: (_WIDTH + 1) (_HEIGHT + 1) (_WIDTH * 2) (_HEIGHT * 2); \
+            border: (_LEFT * 2) (_RIGHT * 2) (_TOP * 2) (_BOTTOM * 2); \
+         } \
+         image { \
+            image: _NAME"@4.png" COMP; \
+            size:  (_WIDTH * 2 + 1) (_HEIGHT * 2 + 1) (_WIDTH * 8) (_HEIGHT * 8); \
+            border: (_LEFT * 4) (_RIGHT * 4) (_TOP * 4) (_BOTTOM * 4); \
+         } \
+      }
+
+#define IMAGE_SET_BORDER(_NAME, _WIDTH, _HEIGHT, _LEFT, _RIGHT, _TOP, _BOTTOM) \
+      images.set { \
+         name: _NAME; \
+         image { \
+            image: _NAME".png" COMP; \
+            size: 0 0 _WIDTH _HEIGHT; \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+         image { \
+            image: _NAME"@2.png" COMP; \
+            size: (_WIDTH + 1) (_HEIGHT + 1) (_WIDTH * 2) (_HEIGHT * 2); \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+         image { \
+            image: _NAME"@4.png" COMP; \
+            size:  (_WIDTH * 2 + 1) (_HEIGHT * 2 + 1) (_WIDTH * 8) (_HEIGHT * 8); \
+            border: _LEFT _RIGHT _TOP _BOTTOM; \
+         } \
+      }
+
+images.image: "win_shadow_rounded.png" COMP;
+
+#define WIN_SHADOW_ROUNDED_ARC \
+   image.normal: "win_shadow_rounded.png"; \
+   image.border: 44 44 44 44; \
+   image.middle: 0; \
+   rel1.offset: -21 -14; \
+   rel2.offset: 20 27; \
+   fill.smooth: 0
+
+IMAGE_SET("reload", 14, 14)
+
+#define BUSY_SPINNER(_NAME, _CLIP, _REL, _SIG_START, _SIG_STOP, _SIG_SRC) \
+      part { name: _NAME; mouse_events: 0; \
+         clip_to: _CLIP; \
+         description { state: "default" 0.0; \
+            fixed: 1 1; \
+            rel1.to: _REL; \
+            rel2.to: _REL; \
+            image.normal: "reload"; \
+            map.on: 1; \
+            map.smooth: 1; \
+            map.rotation.center: _REL; \
+         } \
+         description { state: "spin" 0.0; \
+            inherit: "default" 0.0; \
+            map.rotation.z: -360; \
+         } \
+      } \
+      program { name: "spin"; \
+         signal: _SIG_START; source: _SIG_SRC; \
+         action: STATE_SET "spin" 0.0; \
+         transition: LINEAR 1.0; \
+         target: _NAME; \
+         after: "spin2"; \
+      } \
+      program { name: "spin2"; \
+         action: STATE_SET "default" 0.0; \
+         target: _NAME; \
+         after: "spin"; \
+      } \
+      program { \
+         signal: _SIG_STOP; source: _SIG_SRC; \
+         action: STATE_SET "default" 0.0; \
+         transition: SINUSOIDAL 1.0; \
+         target: _CLIP; \
+         after: "spin3"; \
+      } \
+      program { name: "spin3"; \
+         action: ACTION_STOP; \
+         target: "spin"; \
+         target: "spin2"; \
+         after: "spin4"; \
+      } \
+      program { name: "spin4"; \
+         action: STATE_SET "default" 0.0; \
+         target: _NAME; \
+      }
+
+      /*program { \
+         signal: _SIG_START; source: _SIG_SRC; \
+         action: STATE_SET "spin" 0.0; \
+         transition: SINUSOIDAL 0.25; \
+         target: _CLIP; \
+      } \ */
