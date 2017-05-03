@@ -1,6 +1,8 @@
+assets/
 build.sh
 .orig/
-/*.png
 /*.edc
-/*.wav
-
+*.jpg
+*.png
+*.wav
+*.xpm
