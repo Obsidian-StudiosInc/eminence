@@ -191,7 +191,7 @@ group { name: "e/modules/notification/main";
             color_class: "popup_title_text";
             text {
                font: FNBD;
-               size: FNSIZE;
+               size: 10;
                min: 0 1;
                align: 0.0 0.5;
                text_class: "notification_title";

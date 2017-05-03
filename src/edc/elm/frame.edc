@@ -76,7 +76,7 @@ group { name: "elm/frame/base/default";
             rel2.offset: -3 1;
             rel2.to_x: "edge2";
             align: 0.0 0.0;
-            text { font: FNBD; size: FNSIZE;
+            text { font: FNBD; size: 10;
                text_class: "frame";
                align: 0.0 0.0;
                min: 0 1;

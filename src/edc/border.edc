@@ -454,7 +454,7 @@ group {
             }
             color_class: "win_border_title";
             text {
-               font: FN; size: FNSIZE;
+               font: FN; size: 10;
                text_class: "title_bar";
                align: 0.5 0.5;
                min: 0 1;
@@ -962,7 +962,7 @@ group { name: "e/widgets/border/default/move";
             rel1.relative: 1.0 0.0;
             rel2.offset: -5 -5;
             color_class: "move_text";
-            text { font: FN; size: FNSIZE;
+            text { font: FN; size: 10;
                min: 1 1;
                ellipsis: -1;
                text_class: "move_text";

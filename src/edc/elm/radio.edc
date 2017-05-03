@@ -154,7 +154,7 @@ group { name: "elm/radio/base/default";
          description { state: "default" 0.0;
             fixed: 1 1;
             visible: 0;
-            text { font: FN; size: FNSIZE;
+            text { font: FN; size: 10;
                min: 0 0;
                text_class: "radio_text";
             }
@@ -188,7 +188,7 @@ group { name: "elm/radio/base/default";
             rel1.relative: 1.0 0.0;
             rel2.offset: -3 -3;
             color_class: "radio_text";
-            text { font: FN; size: FNSIZE;
+            text { font: FN; size: 10;
               min: 0 0;
               align: 0.0 0.5;
               text_class: "radio";

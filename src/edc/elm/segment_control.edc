@@ -240,7 +240,7 @@ group { name: "elm/segment_control/item/default";
             color_class: "seg_ctrl_text";
             text {
                font: FN;
-               size: FNSIZE;
+               size: 10;
                min: 0 1;
                text_class: "seg_ctrl";
             }

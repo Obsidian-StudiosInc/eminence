@@ -35,7 +35,7 @@ group { name: "e/widgets/menu/default/background";
             align: 0.5 0.0;
             color_class: "menu_title";
             max: 0 0;
-            text { font: Sans; size: FNSIZE;
+            text { font: Sans; size: 10;
                //text_class: "menu_title";
                align: 0.5 0.0;
                min: 0 0;
@@ -215,7 +215,7 @@ group { name: "e/widgets/menu/default/label";
             rel1.offset: 5 -1;
             rel2.offset: (-2-14) -1; // needed for arrows
             color_class: "menu_item";
-            text { font: Sans; size: FNSIZE;
+            text { font: Sans; size: 10;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 0.5;

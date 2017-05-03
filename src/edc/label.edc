@@ -7,7 +7,7 @@ group { name: "e/widgets/label";
             rel2.offset: -3 -3;
             color_class: "label_text";
             color3: 255 255 255 255;
-            text { font: FN; size: FNSIZE;
+            text { font: FN; size: 10;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 0.5;
