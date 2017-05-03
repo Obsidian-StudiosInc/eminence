@@ -19,12 +19,12 @@ EDJS=( elementary terminology )
 
 cleanup() {
 	rm -fr .orig
-	rm -fr !(eminence.sh|LICENSE|README.md)
+	rm -fr !(assets|eminence.sh|src|LICENSE|README.md)
 }
 
 process_edj() {
 	#Unpack
-	edje_decc "/usr/share/${1}/themes/default.edj"
+	edje_decc "/usr/share/${1}/themes/default.edj" -quiet
 
 	# Move stuff to current dir
 	if [[ -d default ]]; then
@@ -32,8 +32,13 @@ process_edj() {
 		rmdir default
 	fi
 
+	[[ "${1}" == "elementary" ]] && \
+		cp -r assets/other/* assets/whitened/* src/* ./
+
 	# Rename default.edc file
-	[[ -f default.edc ]] && mv default.edc eminence.edc
+	if [[ "${1}" == "terminology" ]] && [[ -f default.edc ]]; then
+		mv default.edc eminence.edc
+	fi
 
 	# Sed edc files
 	local f FILES
@@ -44,13 +49,26 @@ process_edj() {
 			"${f}"
 	done
 
+	# Temp dir for original pngs
+	[[ ! -d .orig ]] && mkdir .orig
+
 	local p PNGS DEST
 	if [[ "${1}" == "elementary" ]]; then
+		mkdir .orig/O
 		DEST="${1}"
-		sed -i -e 's|"Dark"|"Eminence"|' \
-			-e 's|"The|"Purple theme based on the|' \
-			edc/about-theme.edc
 		PNGS=(
+			O/digit_0
+			O/digit_1
+			O/digit_2
+			O/digit_3
+			O/digit_4
+			O/digit_5
+			O/digit_6
+			O/digit_7
+			O/digit_8
+			O/digit_9
+			O/digit_am
+			O/digit_pm
 			add_glow_small
 			ball_small_glow_intense
 			bg_glow_in
@@ -231,10 +249,8 @@ process_edj() {
 		)
 	fi
 
-	# Temp dir for original pngs
-	[[ ! -d .orig ]] && mkdir .orig
-
 	# Process pngs via imagemagick convert
+	local orig
 	for p in "${PNGS[@]}"; do
 		orig=".orig/${p}.png"
 		[[ ! -f "${orig}" ]] && mv "${p}.png" "${orig}"
@@ -242,10 +258,12 @@ process_edj() {
 	done
 
 	edje_cc -id . -fd . eminence.edc -o \
-		"${HOME}/.${DEST}/themes/eminence.edj"
+		"${HOME}/.${DEST}/themes/eminence.edj" || exit 1
 
 	cleanup
 }
+
+cleanup
 
 for e in "${EDJS[@]}"; do
 	process_edj "${e}"
