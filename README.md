@@ -52,3 +52,12 @@ generated via either scripts or SVG files. SVG files will be coverted to
 rasters via ImageMagick. Scripts to generate images should also be using 
 ImageMagick for such. This way all icons can be generated as needed with 
 the source to their creation stored in editable files in git.
+
+## Font
+This theme is set to use Noto Sans font by default. You can change that 
+via a Custom Font Class in Settings -> Font. It is recommend to ensure  
+you have the font installed prior to use the them. Though it should fall 
+back to some Sans, or some other font from fontconfig. All fonts should 
+scale with changing font size, but some are not. Those that do not seem 
+to adjust size with the default them. Which means that is an issue 
+specific to this theme, and related.
