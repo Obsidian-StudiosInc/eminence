@@ -44,3 +44,11 @@ process of being replaced/removed. Binaries will not be committed to
 this repo!
 
 Without such the script/build will fail!
+
+## Icons
+There will never be binary images in this repositor. However any good 
+theme needs custom icons. The plan for custom icons is to have them 
+generated via either scripts or SVG files. SVG files will be coverted to 
+rasters via ImageMagick. Scripts to generate images should also be using 
+ImageMagick for such. This way all icons can be generated as needed with 
+the source to their creation stored in editable files in git.
