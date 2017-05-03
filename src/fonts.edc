@@ -14,8 +14,8 @@
 #define FNBD   "Sans:style=Bold"
 #define FNIT   "Sans:style=Oblique"
 #define FNBDIT "Sans:style=Bold Italic"
-#define FNSIZE "11"
-#define FNSIZE_ 11
+#define FNSIZE "10"
+#define FNSIZE_ 10
 
 #define COL_FONT_BASIC_DEFAULT                                 211 218 227 255
 #define COL_FONT_BASIC_PRESSED                                 255 255 255 255
