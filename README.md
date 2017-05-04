@@ -1,6 +1,7 @@
 # Eminence - Purple/Violet them for E
 [![License](https://img.shields.io/badge/license-GPLv3-9977bb.svg?style=plastic)](https://github.com/Obsidian-StudiosInc/ebuild-bumper/blob/master/LICENSE)
 [![Build Status](https://img.shields.io/travis/Obsidian-StudiosInc/eminence/master.svg?colorA=9977bb&style=plastic)](https://travis-ci.org/Obsidian-StudiosInc/eminence)
+[![Build Status](https://img.shields.io/shippable/58fa9a131fb3ec0700df16e7/master.svg?colorA=9977bb&style=plastic)](https://app.shippable.com/github/Obsidian-StudiosInc/eminence)
 
 A bash script and some modified edc files to convert default 
 Enlightenment and Terminology themes from blue to Purple. The script 
