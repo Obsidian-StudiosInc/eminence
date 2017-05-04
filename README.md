@@ -17,7 +17,7 @@ The colors and eventually the reset will deviate heavily from the
 Enlightenment Arc theme, and Arc themes in general.
 
 This theme has evolved to more than just color modifications to the 
-default them. It will be a semi hybrid between the default them, Arc, 
+default theme. It will be a semi hybrid between the default theme, Arc, 
 and personal preferences. When the theme is ready for prime time, edj 
 files will be generated via travis on tag and available in the releases.
 
