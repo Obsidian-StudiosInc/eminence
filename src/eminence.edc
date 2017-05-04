@@ -1,13 +1,13 @@
 #include "macros.edc"
 
-#define THEME_NAME_UPPER "Arc Eminence"
-#define THEME_NAME_LOWER "arc-eminence"
+#define THEME_NAME_UPPER "Eminence"
+#define THEME_NAME_LOWER "eminence"
 
 externals.external: "elm";
 
 // theme api version. from 1.10 on we will check version to avoid
 // compat issues
-data.item: "version" "110";
+data.item: "version" "119";
 
 collections {
 #include "fonts.edc"
