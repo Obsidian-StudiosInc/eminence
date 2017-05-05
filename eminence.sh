@@ -23,11 +23,11 @@ while :
 do
         case "$1" in
 		-e | --elementary)
-			EDJS="${EDJS[0]}"
+			EDJS=( "${EDJS[0]}" )
 			shift
 			;;
 		-t | --terminology)
-			EDJS="${EDJS[1]}"
+			EDJS=( "${EDJS[1]}" )
 			shift
 			;;
 		-i | --install)
