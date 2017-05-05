@@ -47,7 +47,7 @@ cleanup() {
 }
 
 process_edj() {
-	echo "Creating eminence-${1}"
+	echo "Creating eminence-${1} v${VERSION}"
 	[[ -f "eminence-${1}.edj" ]] && rm "eminence-${1}.edj"
 
 	#Unpack
