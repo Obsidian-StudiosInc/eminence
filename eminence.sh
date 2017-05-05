@@ -17,12 +17,37 @@ shopt -s extglob
 
 EDJS=( elementary terminology )
 
+while :
+do
+        case "$1" in
+		-e | --elementary)
+			EDJS="${EDJS[0]}"
+			shift
+			;;
+		-t | --terminology)
+			EDJS="${EDJS[1]}"
+			shift
+			;;
+		-i | --install)
+			echo "installing"
+			INSTALL=0
+			shift
+			;;
+		*)
+			break
+			;;
+	esac
+done
+
 cleanup() {
 	rm -fr .orig
-	rm -fr !(assets|eminence.sh|src|LICENSE|README.md)
+	rm -fr !(assets|eminence-*.edj|eminence.sh|src|LICENSE|README.md)
 }
 
 process_edj() {
+	echo "Creating eminence-${1}"
+	[[ -f "eminence-${1}.edj" ]] && rm "eminence-${1}.edj"
+
 	#Unpack
 	edje_decc "/usr/share/${1}/themes/default.edj" -quiet
 
@@ -257,9 +282,12 @@ process_edj() {
 		convert "${orig}" -modulate "${HSB}" "${p}.png"
 	done
 
-	edje_cc -id . -fd . eminence.edc -o \
-		"${HOME}/.${DEST}/themes/eminence.edj" || exit 1
+	local DIR
 
+	[[ ${INSTALL} ]] && DIR="${HOME}/.${DEST}/themes/"
+
+	edje_cc -id . -fd . eminence.edc -o \
+		"${DIR}eminence-${1}.edj" || exit 1
 	cleanup
 }
 
