@@ -24,7 +24,9 @@ deploy:
   provider: releases
   api_key:
     secure: LeSJhVpUwLtY/bwUxFlhqD/H67IcZjFPmUdmUG9okt4sRGkmTTz/wd5CYBcCnZSpG+SWfFgFtbab29zzRpn1efbAREbRsSOf/GFiAJ2u7F8uXLLi2VlWe5az258HLDvCAasH9wLUNVZVPR07MKBunr4tSHquL+GSeAdorgnmnnq5GoEeYFstFo2et2olPZmAr2NSfr+BxAVc6C5OZFF7t+scoq5SaU4dR1YX4nm1Z/f1nim9revYPIFSGNCXc2Ipp9FmdYk0voj3Q5ci/aVrcSGwyk95lwpSXYBeQEZuBNP1fM/MB2p9R3D/wT5e1vJBeXHDyHyX3Aeqd1GzkEAW+6tjp/0zDh1djR/56wpAdMnllygrqKgT/Sbjmq0sNH8weANq5MwzZku0nYj0/BMbjzZlaVp+4Iq1AvxKQHLqMrfnBAMWqH8I9TKkTRSXjRTjxMHgNplm37o6NwxZmXHY3iW6+DS2Jk2F4vh4mYSKLc8MtTW7/pkGeksc9ETi7LmJ8t7NxULYSp5lV8MvSb4uFY6clz0KWXewtEukCpxjkIbOu0dHS7znLXJWtP95vlyahtnFc3IRnCiE0Z8onzkBbq7nHvLWoHsDRvaaxEB+L+UsYb2k02HPAla/4tGLqKFInH2yduUop0WIUiZ3IDH1TRyIhjq28a+J+23Mu5Xk/Os=
-  file: eminence.edj
+  file:
+    - eminence-elementary.edj
+    - eminence-terminology.edj
   on:
     repo: Obsidian-StudiosInc/eminence
     tags: true
