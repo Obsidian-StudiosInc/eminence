@@ -19,7 +19,7 @@ before_deploy:
   - mv enlightenment-arc-theme/assets ./
   - chmod 775 eminence.sh
   - ./eminence.sh
-  - ls -l
+  - chmod 664 ./*.edj
 
 deploy:
   provider: releases
