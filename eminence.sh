@@ -63,7 +63,7 @@ process_edj() {
 		cp -r assets/other/* assets/whitened/* src/* ./
 		local f
 		for f in ./*.png ./*.xpm; do
-			mv -v "${f}" "${f/_arc/}"
+			[[ "${f}" =~ arc ]] && mv -v "${f}" "${f/_arc/}"
 		done
 	# Rename default.edc file
 	elif [[ "${1}" == "terminology" ]] && [[ -f default.edc ]]; then
