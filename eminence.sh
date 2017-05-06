@@ -59,11 +59,14 @@ process_edj() {
 		rmdir default
 	fi
 
-	[[ "${1}" == "elementary" ]] && \
+	if [[ "${1}" == "elementary" ]]; then
 		cp -r assets/other/* assets/whitened/* src/* ./
-
+		local f
+		for f in $(ls *.png *.xpm); do
+			mv -v "${f}" "${f/_arc/}"
+		done
 	# Rename default.edc file
-	if [[ "${1}" == "terminology" ]] && [[ -f default.edc ]]; then
+	elif [[ "${1}" == "terminology" ]] && [[ -f default.edc ]]; then
 		mv default.edc eminence.edc
 	fi
 
