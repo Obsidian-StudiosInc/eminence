@@ -4,7 +4,7 @@ sudo: required
 install:
   - sudo add-apt-repository -y ppa:niko2040/e19
   - sudo apt-get -qq update
-  - sudo apt-get install -y gettext libc6-dbg libefl libefl-dbg libefl-dev
+  - sudo apt-get install -y gettext libc6-dbg libefl libefl-dbg libefl-dev terminology
   - wget https://launchpad.net/ubuntu/+source/shellcheck/0.4.4-4/+build/11197881/+files/shellcheck_0.4.4-4_amd64.deb
   - sudo dpkg -i shellcheck_0.4.4-4_amd64.deb
 
