@@ -1,4 +1,4 @@
-# Eminence - Purple/Violet them for E
+# Eminence - Purple/Violet Dark theme for E
 [![License](https://img.shields.io/badge/license-GPLv3-9977bb.svg?style=plastic)](https://github.com/Obsidian-StudiosInc/ebuild-bumper/blob/master/LICENSE)
 [![Build Status](https://img.shields.io/travis/Obsidian-StudiosInc/eminence/master.svg?colorA=9977bb&style=plastic)](https://travis-ci.org/Obsidian-StudiosInc/eminence)
 [![Build Status](https://img.shields.io/shippable/58fa9a131fb3ec0700df16e7/master.svg?colorA=9977bb&style=plastic)](https://app.shippable.com/github/Obsidian-StudiosInc/eminence)
@@ -18,23 +18,10 @@ Enlightenment Arc theme, and Arc themes in general.
 
 This theme has evolved to more than just color modifications to the 
 default theme. It will be a semi hybrid between the default theme, Arc, 
-and personal preferences. When the theme is ready for prime time, edj 
-files will be generated via travis on tag and available in the releases.
+and personal preferences.
 
-```
-~/.elementary/themes/eminence.edj
-~/.config/terminology/themes/eminence.edj
-```
-
-## Usage
-Additional instructions and maybe help/options output will be added  
-later. For now simply
-
-```
-chmod 775 eminence.sh
-./eminence.sh
-
-```
+See [releases](https://github.com/Obsidian-StudiosInc/eminence/releases) 
+to download themes.
 
 ## Building
 For the time being you will need to copy the
@@ -44,7 +31,23 @@ folder next to eminence script and src dirs. They assets are in the
 process of being replaced/removed. Binaries will not be committed to 
 this repo!
 
-Without such the script/build will fail!
+Without such the script/build will fail! You can refer to the 
+.travis.yml for build enviroment preparations.
+
+To build all, use -e/--elementary or -t/--terminology for just that theme.
+```
+chmod 775 eminence.sh
+./eminence.sh
+
+```
+
+If you use the -i/install option resulting files will be placed in the 
+following locations.
+
+```
+~/.elementary/themes/eminence.edj
+~/.config/terminology/themes/eminence.edj
+```
 
 ## Icons
 There will never be binary images in this repositor. However any good 
