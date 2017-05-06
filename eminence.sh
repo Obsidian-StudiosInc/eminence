@@ -92,6 +92,11 @@ process_edj() {
 	local p PNGS DEST
 	if [[ "${1}" == "elementary" ]]; then
 		mkdir .orig/O
+		for p in O/digit_na O/digit_nm; do
+			mv "${p}.png" .orig/O
+			convert ".orig/${p}.png" -alpha on -channel a \
+				-evaluate multiply 0 "${p}.png"
+		done
 		DEST="${1}"
 		PNGS=(
 			O/digit_0
