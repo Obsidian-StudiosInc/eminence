@@ -62,7 +62,7 @@ process_edj() {
 	if [[ "${1}" == "elementary" ]]; then
 		cp -r assets/other/* assets/whitened/* src/* ./
 		local f
-		for f in $(ls *.png *.xpm); do
+		for f in ./*.png ./*.xpm; do
 			mv -v "${f}" "${f/_arc/}"
 		done
 	# Rename default.edc file
