@@ -2,6 +2,7 @@ assets/
 build.sh
 .orig/
 /*.edc
+*.edj
 *.jpg
 *.png
 *.wav
