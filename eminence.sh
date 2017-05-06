@@ -77,6 +77,13 @@ process_edj() {
 		sed -i -e "s|51 153 255|${RGB}|g" \
 			-e "s|3399ff|${HTML}|g" \
 			"${f}"
+		if [[ ! "${f}" =~ fonts.edc ]]; then
+			sed -i -e 's|"Sans"|FN|g' \
+				-e 's|Sans;|FN;|g' \
+				-e 's|"Sans:style=Bold"|FNBD|g' \
+				-e 's|Sans:style=Bold|FNBD;|g' \
+				"${f}"
+		fi
 	done
 
 	# Temp dir for original pngs
