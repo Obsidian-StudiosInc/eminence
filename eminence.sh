@@ -294,12 +294,15 @@ process_edj() {
 		convert "${orig}" -modulate "${HSB}" "${p}.png"
 	done
 
-	local DIR
-
-	[[ ${INSTALL} ]] && DIR="${HOME}/.${DEST}/themes/"
+	local name DIR
+	name="eminence-${1}"
+	if [[ ${INSTALL} ]]; then
+		DIR="${HOME}/.${DEST}/themes/"
+		name="eminence"
+	fi
 
 	edje_cc -id . -fd . eminence.edc -o \
-		"${DIR}eminence-${1}.edj" || exit 1
+		"${DIR}${name}.edj" || exit 1
 	cleanup
 }
 
