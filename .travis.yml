@@ -21,7 +21,6 @@ before_deploy:
   - ./eminence.sh
   - chmod 664 ./*.edj
   - mv ./*.edj /tmp
-  - ls -l /tmp
 
 deploy:
   provider: releases
