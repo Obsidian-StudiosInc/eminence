@@ -1,41 +1,3 @@
-//signal: "e,state,shadow,on"; source: "e";
-//signal: "e,state,shadow,off"; source: "e";
-//signal: "e,state,focused"; source: "e";
-//signal: "e,state,unfocused"; source: "e";
-//signal: "e,state,urgent"; source: "e";
-//signal: "e,state,not_urgent"; source: "e";
-//signal: "e,state,hung"; source: "e";
-//signal: "e,state,unhung"; source: "e";
-//signal: "e,state,shaded"; source: "e";
-//signal: "e,state,unshaded"; source: "e";
-//signal: "e,state,shading"; source: "e";
-//signal: "e,state,unshading"; source: "e";
-//signal: "e,action,maximize*"; source: "e";
-//signal: "e,action,unmaximize*"; source: "e";
-//signal: "e,state,focused"; source: "e";
-//signal: "e,state,unfocused"; source: "e";
-//part { name: "e.swallow.client"; type: SWALLOW;
-//part { name: "e.text.title"; type: TEXT; mouse_events: 0;
-//part { name: "e.swallow.icon"; type: SWALLOW; mouse_events: 0;
-//part { name: "e.event.titlebar"; type: RECT;
-//part { name: "e.event.icon"; type: RECT;
-//part { name: "e.event.close"; type: RECT;
-//part { name: "e.event.maximize"; type: RECT;
-//part { name: "e.event.minimize"; type: RECT;
-//part { name: "e.event.resize.tl"; type: RECT;
-//part { name: "e.event.resize.t"; type: RECT;
-//part { name: "e.event.resize.tr"; type: RECT;
-//part { name: "e.event.resize.bl"; type: RECT;
-//part { name: "e.event.resize.b"; type: RECT;
-//part { name: "e.event.resize.br"; type: RECT;
-//group { name: "e/widgets/border/default/border";
-//group { name: "e/widgets/border/sparkle/border";
-//group { name: "e/widgets/border/dialog/border";
-//group { name: "e/widgets/border/noresize/border";
-//group { name: "e/widgets/border/noresize_dialog/border";
-//group { name: "e/widgets/border/pixel/border";
-//group { name: "e/widgets/border/default/move";
-//group { name: "e/widgets/border/default/resize";
 #define INACTIVE 1
 #define ACTIVE 2
 #define HOVER 4
@@ -493,33 +455,41 @@ group {
             color: 0 0 0 0;
          }
       }
+      group { name: "e.event.close";
+         source: "e/border/btn-close";
+         desc { "default";
+            fixed: 1 0;
+            rel1.relative: 0.0 0.0;
+            rel2.relative: 0.0 1.0;
+            rel2.to_y: "top_bg";
+            align: 0.0 0.5;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
+         }
+      }
       group { name: "e.event.minimize";
          source: "e/border/btn-minimize";
          desc { "default";
-               step: 2 2;
-               rel1.relative: 0.05 0.0;
-               rel.to: "btn-spacer";
-               rel2.relative: 0.35 1.0;
-               fixed: 1 1;
+            rel1.relative: 1.0 0.0;
+            rel1.offset: 1 0;
+            rel1.to_x: "e.event.close";
+            rel2.relative: 1.0 1.0;
+            rel2.to_y: "top_bg";
+            rel2.to_x: "e.event.close";
+            align: 0.0 0.5;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
          }
       }
       group { name: "e.event.maximize";
          source: "e/border/btn-maximize";
          desc { "default";
-               step: 2 2;
-               rel.to: "btn-spacer";
-               rel1.relative: 0.35 0.0;
-               rel2.relative: 0.65 1.0;
-               fixed: 1 1;
-         }
-      }
-      group { name: "e.event.close";
-         source: "e/border/btn-close";
-         desc { "default";
-               step: 2 2;
-               rel.to: "btn-spacer";
-               rel1.relative: 0.65 0.0;
-               fixed: 1 1;
+            rel1.relative: 1.0 0.0;
+            rel1.offset: 1 0;
+            rel1.to_x: "e.event.minimize";
+            rel2.relative: 1.0 1.0;
+            rel2.to_y: "top_bg";
+            rel2.to_x: "e.event.close";
+            align: 0.0 0.5;
+            aspect: 1.0 1.0; aspect_preference: VERTICAL;
          }
       }
       part { name: "bottom"; nomouse;
@@ -821,7 +791,7 @@ group { name: "e/widgets/border/dialog/border";
       part { name: "e.event.close";
          desc { "default";
                rel.to: "btn-spacer";
-               rel1.relative: 0.0 0.0;
+            rel1.relative: 0.0 0.0;
          }
       }
       part { name: "e.event.maximize";
@@ -897,7 +867,7 @@ group { name: "e/widgets/border/noresize_dialog/border";
       part { name: "e.event.close";
          desc { "default";
                rel.to: "btn-spacer";
-               rel1.relative: 0.0 0.0;
+            rel1.relative: 0.0 0.0;
          }
       }
       part { name: "e.event.maximize";
