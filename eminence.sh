@@ -31,7 +31,6 @@ do
 			shift
 			;;
 		-i | --install)
-			echo "installing"
 			INSTALL=0
 			shift
 			;;
