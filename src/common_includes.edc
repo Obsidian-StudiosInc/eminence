@@ -142,9 +142,9 @@
 
 // icons
 #include "edc/icons.edc"
-// #include "edc/border-icons.edc"
+#include "edc/border-icons.edc"
 
 // port unchanged stuff so this can work as a replacement
-// #include "edc/O/efm_icons.edc"
-// #include "edc/O/icons.edc"
+#include "edc/O/efm_icons.edc"
+#include "edc/O/icons.edc"
 
