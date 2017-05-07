@@ -29,7 +29,7 @@
 //all kinds of popups/notification/ctxpopup bg
 #define COL_BG_DARK_TRANS         30  30 30 180
 #define COL_BG_DARKER             30  30 30 255
-#define COL_BG_DARKER_TRANS       30  30 30 200
+#define COL_BG_DARKER_TRANS       30  30 30 135
 #define COL_BORDER                20  20 20 255
 #define COL_BORDER_DARK           20  20 20 255
 
@@ -350,7 +350,7 @@ color_classes {
       desc: "Shelf base of default shelf";
    }
    color_class { name: "shelf_base_translucent";
-      color: COL_BG_DARK_TRANS;
+      color: COL_BG_DARKER_TRANS;
       desc: "Shelf base of translucent shelf";
    }
    color_class { name: "shelf_base_alternate";
