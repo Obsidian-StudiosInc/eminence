@@ -73,7 +73,7 @@ process_edj() {
 	local f FILES
 	FILES=( $(find . -name '*.edc' -type f -print) )
 	for f in "${FILES[@]}"; do
-		sed -i -e "s|51 153 255|${RGB}|g" \
+		sed -i -e "s|5[1,2] 153 255|${RGB}|g" \
 			-e "s|3399ff|${HTML}|g" \
 			"${f}"
 		if [[ ! "${f}" =~ fonts.edc ]]; then
