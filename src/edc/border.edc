@@ -420,7 +420,6 @@ group {
                text_class: "title_bar";
                align: 0.5 0.5;
                min: 0 1;
-               // text: "MMMMMMMMMMMMMMMMM";
                text: " ";
             }
             fixed: 0 1;
@@ -442,8 +441,8 @@ group {
          description { state: "default" 0.0;
             rel1.to_y: "border_shadow_spacer";
             rel1.relative: 0.0 1.0;
-            min: (BORDER_BTN_W * 6) (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
-            max: (BORDER_BTN_W * 6) (BORDER_BTN_H + 2 * BORDER_BTN_PAD); 
+            min: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
+            max: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD); 
             align: 1.0 0.0;
             fixed: 1 1;
          }
@@ -669,7 +668,6 @@ group {
             rel1.to_y: "e.swallow.client";
             rel1.offset: -2 -3;
             rel2.offset: 2 2;
-            // rel1.offset: 0 -1;
             rel2.relative: 0.0 1.0;
             min: 32 5;
             align: 0.0 1.0;
@@ -715,7 +713,6 @@ group {
          description { state: "default" 0.0;
             rel1.relative: 1.0 1.0;
             rel1.to_y: "e.swallow.client";
-            // rel1.offset: 0 -1;
             rel1.offset: -2 -3;
             rel2.offset: 2 2;
             rel2.relative: 1.0 1.0;
@@ -820,8 +817,8 @@ group { name: "e/widgets/border/dialog/border";
       }
       part { name: "btn-spacer";
          desc { "default";
-            min: (BORDER_BTN_W * 2) (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
-            max: (BORDER_BTN_W & 2) (BORDER_BTN_H + 2 * BORDER_BTN_PAD);  
+            min: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
+            max: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);  
          }
       }
       part { name: "e.event.close";
@@ -900,8 +897,8 @@ group { name: "e/widgets/border/noresize_dialog/border";
       }
       part { name: "btn-spacer";
          desc { "default";
-            min: (BORDER_BTN_W * 2) (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
-            max: (BORDER_BTN_W & 2) (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
+            min: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
+            max: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
          }
       }
       part { name: "e.event.close";
