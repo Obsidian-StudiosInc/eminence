@@ -3,12 +3,16 @@
 [![Build Status](https://img.shields.io/travis/Obsidian-StudiosInc/eminence/master.svg?colorA=9977bb&style=plastic)](https://travis-ci.org/Obsidian-StudiosInc/eminence)
 [![Build Status](https://img.shields.io/shippable/58fa9a131fb3ec0700df16e7/master.svg?colorA=9977bb&style=plastic)](https://app.shippable.com/github/Obsidian-StudiosInc/eminence)
 
-A bash script and some modified edc files to convert default 
-Enlightenment and Terminology themes from blue to Purple. The script 
-will unpack the default theme, process the edc and png files. Then 
-repack the theme as eminence. After it will clean up after itself 
-leaving just the script. The resulting eminence.edj is placed is your 
-home elementary and terminology themes directory.
+This is a dark them with purple icons and some purple highlights. It is 
+meant to be easy on the eyes, and ideally light weight. This theme is a 
+work in progress.
+
+Eiminence is created via a bash script and some modified edc files to 
+convert default Enlightenment and Terminology themes from blue to 
+Purple. The script will unpack the default theme, process the edc and 
+png files. Then repack the theme as eminence. After it will clean up 
+after itself leaving just the script. The resulting eminence.edj is 
+placed is your home elementary and terminology themes directory.
 
 The modified edc files are based on work
 [from Matthias Wauer/@LeBlue](https://github.com/LeBlue) on the
