@@ -65,7 +65,7 @@ process_edj() {
 			[[ "${f}" =~ arc ]] && mv -v "${f}" "${f/_arc/}"
 		done
 		for f in ./toggle-sym-disabled*.png; do
-			cp -v ${f} ${f/toggle-sym-disabled/close-btn}
+			cp -v "${f}" "${f/toggle-sym-disabled/close-btn}"
 		done
 
 	# Rename default.edc file
