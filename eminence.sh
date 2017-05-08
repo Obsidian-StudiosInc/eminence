@@ -64,6 +64,10 @@ process_edj() {
 		for f in ./*.png ./*.xpm; do
 			[[ "${f}" =~ arc ]] && mv -v "${f}" "${f/_arc/}"
 		done
+		for f in ./toggle-sym-disabled*.png; do
+			cp -v ${f} ${f/toggle-sym-disabled/close-btn}
+		done
+
 	# Rename default.edc file
 	elif [[ "${1}" == "terminology" ]] && [[ -f default.edc ]]; then
 		mv default.edc eminence.edc
@@ -98,6 +102,9 @@ process_edj() {
 		done
 		DEST="${1}"
 		PNGS=(
+			reload
+			reload@2
+			reload@4
 			O/digit_0
 			O/digit_1
 			O/digit_2
