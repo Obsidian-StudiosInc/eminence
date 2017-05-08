@@ -8,7 +8,7 @@
 # 51 153 255 -> 150 110 220
 # 3399ff     -> 966edc
 
-VERSION=0.1.2
+VERSION=0.1.3
 
 # Purple color variables
 RGB="150 110 220"
