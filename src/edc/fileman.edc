@@ -795,8 +795,6 @@ group { name: "e/fileman/desktop/icon/fixed";
             rel1.to: "e.text.label";
             rel2.offset: 7 7;
             rel2.to: "label_min";
-            image.normal: "darken_square.png";
-            image.border: 6 6 6 6;
             fill.smooth: 0;
             fixed: 1 1;
          }
