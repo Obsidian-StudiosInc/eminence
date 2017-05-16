@@ -810,7 +810,29 @@ group {
          action: STATE_SET "default" 0.0;
          target: "e.text.title";
       }
-
+      program {
+         signal: "e,state,urgent"; source: "e";
+         action: STATE_SET "bounce1" 0.0;
+         target: "icon";
+         after: "urg1";
+      }
+      program { name: "urg1";
+         action: STATE_SET "bounce2" 0.0;
+         transition: DECELERATE 0.4;
+         target: "icon";
+         after: "urg2";
+      }
+      program { name: "urg2";
+         action: STATE_SET "bounce1" 0.0;
+         transition: ACCELERATE 0.3;
+         target: "icon";
+         after: "urg1";
+      }
+      program {
+         signal: "e,state,not_urgent"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "icon";
+      }
       program {
          signal: "e,action,maximize*"; source: "e";
          action: STATE_SET "max" 0.0;
