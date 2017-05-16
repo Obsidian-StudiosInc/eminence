@@ -465,6 +465,18 @@ group {
             rel2.to_y: "top_bg";
             align: 0.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
+            map {
+                on: 1;
+                rotation.z: 0;
+                perspective_on: 1;
+            }
+         }
+         desc {
+            state: "rotated" 0.0;
+            inherit: "default" 0.0;
+            map {
+               rotation.z: 360;
+            }
          }
       }
       group { name: "e.event.minimize";
@@ -478,6 +490,18 @@ group {
             rel2.to_x: "e.event.close";
             align: 0.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
+            map {
+                on: 1;
+                rotation.z: 0;
+                perspective_on: 1;
+            }
+         }
+         desc {
+            state: "rotated" 0.0;
+            inherit: "default" 0.0;
+            map {
+               rotation.z: 360;
+            }
          }
       }
       group { name: "e.event.maximize";
@@ -491,6 +515,18 @@ group {
             rel2.to_x: "e.event.close";
             align: 0.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
+            map {
+                on: 1;
+                rotation.z: 0;
+                perspective_on: 1;
+            }
+         }
+         desc {
+            state: "rotated" 0.0;
+            inherit: "default" 0.0;
+            map {
+               rotation.z: 360;
+            }
          }
       }
       part { name: "e.event.icon"; type: RECT;
@@ -804,6 +840,73 @@ group {
          signal: "mouse,clicked,*";
          source: "e.event.minimize";
          action: SIGNAL_EMIT "elm,action,iconify" "elm";
+      }
+      program {
+          name: "rotate-start-close";
+          signal: "mouse,in";
+          source: "e.event.close";
+          action: STATE_SET "rotated" 0.0;
+          transition: LINEAR 1.0;
+          target: "e.event.close";
+          after: "rotate-loop-close";
+      }
+      program {
+          name: "rotate-loop-close";
+          action: STATE_SET "default" 0.0;
+          target: "e.event.close";
+          after: "rotate-start-close";
+      }
+      program {
+          name: "rotate-end-close";
+          signal: "mouse,out";
+          source: "e.event.close";
+          action: STATE_SET "default" 0.0;
+          target: "e.event.close";
+      }
+      program {
+          name: "rotate-start-max";
+          signal: "mouse,in";
+          source: "e.event.maximize";
+          action: STATE_SET "rotated" 0.0;
+          transition: LINEAR 1.0;
+          target: "e.event.maximize";
+          after: "rotate-loop-max";
+      }
+      program {
+          name: "rotate-loop-max";
+          action: STATE_SET "default" 0.0;
+          target: "e.event.maximize";
+          after: "rotate-start-max";
+      }
+      program {
+          name: "rotate-end-max";
+          signal: "mouse,out";
+          source: "e.event.maximize";
+          action: STATE_SET "default" 0.0;
+          target: "e.event.maximize";
+      }
+      program {
+          name: "rotate-start-min";
+          signal: "mouse,in";
+          source: "e.event.minimize";
+          action: STATE_SET "rotated" 0.0;
+          transition: LINEAR 1.0;
+          target: "e.event.minimize";
+          after: "rotate-loop-min";
+      }
+      program {
+          name: "rotate-loop-min";
+          action: STATE_SET "default" 0.0;
+          target: "e.event.minimize";
+          after: "rotate-start-min";
+      }
+      program {
+          name: "rotate-end-min";
+          signal: "mouse,out";
+          source: "e.event.minimize";
+          action: STATE_SET "default" 0.0;
+          target: "e.event.minimize";
+          after: "rotate-end-min";
       }
    }
 }
