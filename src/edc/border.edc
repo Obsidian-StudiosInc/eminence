@@ -28,15 +28,7 @@
          }
       }
       IMAGE_SET("close-btn", BORDER_BTN_W, BORDER_BTN_H)
-      IMAGE_SET("mini-maxi-bg", BORDER_BTN_W, BORDER_BTN_H)
       parts {
-         image { "bg";
-            desc { "default";
-               image.normal: "mini-maxi-bg";
-               rel.to: "base";
-               color_class: "close-btn-bg";
-            }
-         }
          image { "base"; scale: 1;
             desc { "default";
                image.normal: "close-btn";
@@ -123,66 +115,28 @@
                if (!h) {
                   if (!i) {
                      set_state(PART:"base", "active", 0.0);
-                     set_state(PART:"border", "active", 0.0);
                      set_state(PART:"symbol", "active", 0.0);
                   } else {
                      set_state(PART:"base", "default", 0.0);
-                     set_state(PART:"border", "default", 0.0);
                      set_state(PART:"symbol", "default", 0.0);
                   }
                } else {
                   set_state(PART:"base", "hover", 0.0);
-                  set_state(PART:"border", "hover", 0.0);
                   set_state(PART:"symbol", "hover", 0.0);
                }
             } else {
                set_state(PART:"base", "pressed", 0.0);
-               set_state(PART:"border", "pressed", 0.0);
                set_state(PART:"symbol", "pressed", 0.0);
             }
          }
       }
-      IMAGE_SET("mini-maxi-bg", BORDER_BTN_W, BORDER_BTN_H)
       IMAGE_SET("minimize-dash", BORDER_BTN_W, BORDER_BTN_H)
-      IMAGE_SET("mini-maxi-border", BORDER_BTN_W, BORDER_BTN_H)
       parts {
          image { "base"; scale: 1;
             desc { "default";
-               image.normal: "mini-maxi-bg";
                min: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
                max: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
-               color_class: "mini-maxi-bg-inactive";
-            }
-            desc { "active";
-               inherit: "default";
-               color_class: "mini-maxi-bg-active";
-            }
-            desc { "hover";
-               inherit: "default";
-               color_class: "mini-maxi-bg-hover";
-            }
-            desc { "pressed";
-               inherit: "default";
-               color_class: "mini-maxi-bg-pressed";
-            }
-         }
-         image { "border"; nomouse;
-            desc { "default";
-               image.normal: "mini-maxi-border";
-               rel.to: "base";
-               color_class: "mini-maxi-border-inactive";
-            }
-            desc { "active";
-               inherit: "default";
-               color_class: "mini-maxi-border-active";
-            }
-            desc { "hover";
-               inherit: "default";
-               color_class: "mini-maxi-border-hover";
-            }
-            desc { "pressed";
-               inherit: "default";
-               color_class: "mini-maxi-border-pressed";
+               color: 0 0 0 0;
             }
          }
          image { "symbol"; nomouse;
@@ -890,7 +844,7 @@ group {
           signal: "mouse,in";
           source: "e.event.maximize";
           action: STATE_SET "rotated" 0.0;
-          transition: LINEAR 1.0;
+          transition: LINEAR 0.5;
           target: "e.event.maximize";
           after: "rotate-loop-max";
       }
@@ -912,7 +866,7 @@ group {
           signal: "mouse,in";
           source: "e.event.minimize";
           action: STATE_SET "rotated" 0.0;
-          transition: LINEAR 1.0;
+          transition: LINEAR 0.5;
           target: "e.event.minimize";
           after: "rotate-loop-min";
       }
