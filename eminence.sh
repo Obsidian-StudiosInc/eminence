@@ -296,6 +296,7 @@ process_edj() {
 			icon_paste
 			icon_split_h
 			icon_split_v
+			sl_stripe
 		)
 	fi
 
