@@ -58,8 +58,10 @@ process_edj() {
 		rmdir default
 	fi
 
+	[[ -d "src/${1}/" ]] && cp -r "src/${1}/"* ./
+
 	if [[ "${1}" == "elementary" ]]; then
-		cp -r assets/other/* assets/whitened/* src/* ./
+		cp -r assets/other/* assets/whitened/* ./
 		local f
 		for f in ./*.png ./*.xpm; do
 			[[ "${f}" =~ arc ]] && mv -v "${f}" "${f/_arc/}"
