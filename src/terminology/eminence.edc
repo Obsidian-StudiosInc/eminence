@@ -230,7 +230,6 @@ collections {
    group { name: "terminology/background";
       images {
         image: "bg_bevel.png" COMP;
-        image: "bg_glint.png" COMP;
         image: "bg_glow_in.png" COMP;
         image: "bg_led_glow.png" COMP;
         image: "bg_led_base.png" COMP;
@@ -690,36 +689,6 @@ collections {
                visible: 0;
             }
          }
-         part { name: "glintclip"; type: RECT;
-            description { state: "default" 0.0;
-            }
-            description { state: "tab" 0.0;
-               inherit: "default" 0.0;
-            }
-         }
-         part { name: "glint";
-            mouse_events: 0;
-            clip_to: "glintclip";
-            description { state: "default" 0.0;
-               fixed: 1 1;
-               min: 79 5;
-               max: 79 5;
-               rel1 {
-                  relative: 0.0 0.0;
-                  offset: 0 0;
-               }
-               rel2 {
-                  relative: 1.0 0.0;
-                  offset: -1 0;
-               }
-               image.normal: "bg_glint.png";
-               color: 255 255 255 128;
-            }
-            description { state: "focused" 0.0;
-               inherit: "default" 0.0;
-               color: 255 255 255 255;
-            }
-         }
 
          part { name: "tab_bevel_bottom";
             mouse_events: 0;
@@ -979,7 +948,6 @@ collections {
          program {
             signal: "focus,in"; source: "terminology";
             action: STATE_SET "focused" 0.0;
-            target: "glint";
             target: "glow";
             after: "focus_in2";
          }
@@ -991,7 +959,6 @@ collections {
          program {
             signal: "focus,out"; source: "terminology";
             action: STATE_SET "default" 0.0;
-            target: "glint";
             target: "glow";
          }
 
@@ -1005,7 +972,6 @@ collections {
             target: "tabmiddle";
             target: "tabright";
             target: "bevel";
-            target: "glintclip";
             target: "tab_bevel_bottom";
             target: "tab_bevel_top0";
             target: "tab_bevel_top1";
@@ -1031,7 +997,6 @@ collections {
             target: "tabmiddle";
             target: "tabright";
             target: "bevel";
-            target: "glintclip";
             target: "tab_bevel_bottom";
             target: "tab_bevel_top0";
             target: "tab_bevel_top1";
@@ -1477,42 +1442,6 @@ collections {
                visible: 1;
             }
          }
-         part { name: "popmedia_glintclip"; type: RECT;
-            mouse_events: 0;
-            description { state: "default" 0.0;
-               fixed: 1 1;
-               visible: 0;
-            }
-            description { state: "visible" 0.0;
-               inherit: "default" 0.0;
-               visible: 1;
-            }
-         }
-         part { name: "popmedia_glint";
-            mouse_events: 0;
-            clip_to: "popmedia_glintclip";
-            description { state: "default" 0.0;
-               fixed: 1 1;
-               min: 79 5;
-               max: 79 5;
-               rel1 {
-                  to: "terminology.popmedia";
-                  relative: 0.0 0.0;
-                  offset: 0 0;
-               }
-               rel2 {
-                  to: "terminology.popmedia";
-                  relative: 1.0 0.0;
-                  offset: -1 0;
-               }
-               image.normal: "bg_glint.png";
-               visible: 0;
-            }
-            description { state: "visible" 0.0;
-               inherit: "default" 0.0;
-               visible: 1;
-            }
-         }
          part { name: "popmedia_dismiss"; type: RECT;
             mouse_events: 1;
             description { state: "default" 0.0;
@@ -1535,8 +1464,6 @@ collections {
             target: "popmedia_shadow";
             target: "popmedia_overlay";
             target: "popmedia_bevel";
-            target: "popmedia_glint";
-            target: "popmedia_glintclip";
             after: "popmedia_dismiss2";
          }
          program { name: "popmedia_dismiss2";
@@ -1552,8 +1479,6 @@ collections {
             target: "popmedia_shadow";
             target: "popmedia_overlay";
             target: "popmedia_bevel";
-            target: "popmedia_glint";
-            target: "popmedia_glintclip";
             after: "popmedia_dismiss2";
          }
          program {
@@ -1589,8 +1514,6 @@ collections {
             target: "popmedia_shadow";
             target: "popmedia_overlay";
             target: "popmedia_bevel";
-            target: "popmedia_glint";
-            target: "popmedia_glintclip";
          }
          program {
             signal: "popmedia,scale"; source: "terminology";
@@ -1601,8 +1524,6 @@ collections {
             target: "popmedia_shadow";
             target: "popmedia_overlay";
             target: "popmedia_bevel";
-            target: "popmedia_glint";
-            target: "popmedia_glintclip";
          }
          program {
             signal: "popmedia,edje"; source: "terminology";
@@ -1613,8 +1534,6 @@ collections {
             target: "popmedia_shadow";
             target: "popmedia_overlay";
             target: "popmedia_bevel";
-            target: "popmedia_glint";
-            target: "popmedia_glintclip";
          }
          program {
             signal: "popmedia,movie"; source: "terminology";
@@ -1625,8 +1544,6 @@ collections {
             target: "popmedia_shadow";
             target: "popmedia_overlay";
             target: "popmedia_bevel";
-            target: "popmedia_glint";
-            target: "popmedia_glintclip";
          }
 
          /* media busy */
@@ -1845,7 +1762,6 @@ collections {
    group { name: "terminology/base";
       images.image: "pm_shadow.png" COMP;
       images.image: "bg_bevel.png" COMP;
-      images.image: "bg_glint.png" COMP;
       parts {
          part { name: "terminology.content"; type: SWALLOW;
             description { state: "default" 0.0;
@@ -1918,25 +1834,6 @@ collections {
                image.border: 3 3 3 3;
                image.middle: 0;
                fill.smooth: 0;
-            }
-         }
-         part { name: "cmdglint"; mouse_events: 0;
-            clip_to: "cmdclip";
-            description { state: "default" 0.0;
-               fixed: 1 1;
-               min: 79 5;
-               max: 79 5;
-               rel1 {
-                  to: "cmdback";
-                  relative: 0.0 0.0;
-                  offset: 0 0;
-               }
-               rel2 {
-                  to: "cmdback";
-                  relative: 1.0 0.0;
-                  offset: -1 0;
-               }
-               image.normal: "bg_glint.png";
             }
          }
          program {
@@ -3469,7 +3366,6 @@ target: "0.clip"; target: "1.clip"; target: "2.clip"; target: "3.clip"; target: 
    group { name: "terminology/sel/item";
       images {
         image: "bg_bevel.png" COMP;
-        image: "bg_glint.png" COMP;
         image: "pm_shadow.png" COMP;
         image: "cr_glow.png" COMP;
         image: "bg_led_glow.png" COMP;
@@ -3637,29 +3533,6 @@ target: "0.clip"; target: "1.clip"; target: "2.clip"; target: "3.clip"; target: 
             }
          }
          
-         ////////////////////////////////////////////////////////////////////
-         // fancy stuff on top
-         part { name: "glint";
-            mouse_events: 0;
-            clip_to: "clip2";
-            description { state: "default" 0.0;
-               fixed: 1 1;
-               min: 79 5;
-               max: 79 5;
-               rel1 {
-                  to: "terminology.content";
-                  relative: 0.0 0.0;
-                  offset: 0 0;
-               }
-               rel2 {
-                  to: "terminology.content";
-                  relative: 1.0 0.0;
-                  offset: -1 0;
-               }
-               image.normal: "bg_glint.png";
-            }
-         }
-
          ////////////////////////////////////////////////////////////////////
          // visual bell - spinning red siren light
          part { name: "bell_glow";
