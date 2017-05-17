@@ -263,13 +263,6 @@ collections {
         image { image: "bg_shadow2.png" COMP; size: 200 150 400 300; }
         image { image: "bg_shadow3.png" COMP; size: 400 300 99999 99999; }
       }
-      set { name: "bg_shine";
-        image { image: "bg_shine5.png" COMP; size: 0 0 256 120; }
-        image { image: "bg_shine4.png" COMP; size: 256 120 512 240; }
-        image { image: "bg_shine3.png" COMP; size: 512 240 1024 480; }
-        image { image: "bg_shine2.png" COMP; size: 1024 480 2048 960; }
-        image { image: "bg_shine.png"  COMP; size: 2048 960 99999 99999; }
-      }
       sounds {
          sample { name: "bell" LOSSY 64;
             source: "bell.wav";
@@ -697,23 +690,6 @@ collections {
                visible: 0;
             }
          }
-         part { name: "shine";
-            mouse_events: 0;
-            description { state: "default" 0.0;
-               rel1.offset: 0 0;
-               rel2.offset: -1 -1;
-               image.normal: "bg_shine";
-               fill.smooth: 0;
-               align: 0.5 0.0;
-               aspect: (256/120) (256/120);
-               aspect_preference: HORIZONTAL;
-               color: 255 255 255 64;
-            }
-            description { state: "focused" 0.0;
-               inherit: "default" 0.0;
-               color: 255 255 255 255;
-            }
-         }
          part { name: "glintclip"; type: RECT;
             description { state: "default" 0.0;
             }
@@ -1005,7 +981,6 @@ collections {
             action: STATE_SET "focused" 0.0;
             target: "glint";
             target: "glow";
-            target: "shine";
             after: "focus_in2";
          }
          program { name: "focus_in2";
@@ -1018,7 +993,6 @@ collections {
             action: STATE_SET "default" 0.0;
             target: "glint";
             target: "glow";
-            target: "shine";
          }
 
          ////////////////////////////////////////////////////////////////////
@@ -1539,24 +1513,6 @@ collections {
                visible: 1;
             }
          }
-         part { name: "popmedia_shine";
-            mouse_events: 0;
-            description { state: "default" 0.0;
-               fixed: 1 1;
-               rel1.to: "terminology.popmedia";
-               rel2.to: "terminology.popmedia";
-               image.normal: "bg_shine";
-               fill.smooth: 0;
-               align: 0.5 0.0;
-               aspect: (256/120) (256/120);
-               aspect_preference: HORIZONTAL;
-               visible: 0;
-            }
-            description { state: "visible" 0.0;
-               inherit: "default" 0.0;
-               visible: 1;
-            }
-         }
          part { name: "popmedia_dismiss"; type: RECT;
             mouse_events: 1;
             description { state: "default" 0.0;
@@ -1581,7 +1537,6 @@ collections {
             target: "popmedia_bevel";
             target: "popmedia_glint";
             target: "popmedia_glintclip";
-            target: "popmedia_shine";
             after: "popmedia_dismiss2";
          }
          program { name: "popmedia_dismiss2";
@@ -1599,7 +1554,6 @@ collections {
             target: "popmedia_bevel";
             target: "popmedia_glint";
             target: "popmedia_glintclip";
-            target: "popmedia_shine";
             after: "popmedia_dismiss2";
          }
          program {
@@ -1637,7 +1591,6 @@ collections {
             target: "popmedia_bevel";
             target: "popmedia_glint";
             target: "popmedia_glintclip";
-            target: "popmedia_shine";
          }
          program {
             signal: "popmedia,scale"; source: "terminology";
@@ -1650,7 +1603,6 @@ collections {
             target: "popmedia_bevel";
             target: "popmedia_glint";
             target: "popmedia_glintclip";
-            target: "popmedia_shine";
          }
          program {
             signal: "popmedia,edje"; source: "terminology";
@@ -1663,7 +1615,6 @@ collections {
             target: "popmedia_bevel";
             target: "popmedia_glint";
             target: "popmedia_glintclip";
-            target: "popmedia_shine";
          }
          program {
             signal: "popmedia,movie"; source: "terminology";
@@ -1676,7 +1627,6 @@ collections {
             target: "popmedia_bevel";
             target: "popmedia_glint";
             target: "popmedia_glintclip";
-            target: "popmedia_shine";
          }
 
          /* media busy */
@@ -3527,13 +3477,6 @@ target: "0.clip"; target: "1.clip"; target: "2.clip"; target: "3.clip"; target: 
         image: "bg_led.png" COMP;
         image: "bg_led_strobe.png" COMP;
       }
-      set { name: "bg_shine";
-        image { image: "bg_shine5.png" COMP; size: 0 0 256 120; }
-        image { image: "bg_shine4.png" COMP; size: 256 120 512 240; }
-        image { image: "bg_shine3.png" COMP; size: 512 240 1024 480; }
-        image { image: "bg_shine2.png" COMP; size: 1024 480 2048 960; }
-        image { image: "bg_shine.png"  COMP; size: 2048 960 99999 99999; }
-      }
       parts {
          ////////////////////////////////////////////////////////////////////
          // base background and selection image
@@ -3716,21 +3659,7 @@ target: "0.clip"; target: "1.clip"; target: "2.clip"; target: "3.clip"; target: 
                image.normal: "bg_glint.png";
             }
          }
-         part { name: "shine";
-            mouse_events: 0;
-            clip_to: "clip2";
-            description { state: "default" 0.0;
-               fixed: 1 1;
-               rel1.to: "terminology.content";
-               rel2.to: "terminology.content";
-               image.normal: "bg_shine";
-               fill.smooth: 0;
-               align: 0.5 0.0;
-               aspect: (256/120) (256/120);
-               aspect_preference: HORIZONTAL;
-            }
-         }
-         
+
          ////////////////////////////////////////////////////////////////////
          // visual bell - spinning red siren light
          part { name: "bell_glow";
