@@ -70,9 +70,9 @@ process_edj() {
 			cp -v "${f}" "${f/toggle-sym-disabled/close-btn}"
 		done
 
-	# Rename default.edc file
+	# Remove default.edc file, replaced with eminience.edc
 	elif [[ "${1}" == "terminology" ]] && [[ -f default.edc ]]; then
-		mv default.edc eminence.edc
+		rm default.edc
 	fi
 
 	# Sed edc files
