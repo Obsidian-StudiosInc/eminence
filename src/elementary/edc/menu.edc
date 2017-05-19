@@ -274,13 +274,38 @@ group { name: "e/widgets/menu/default/submenu";
             inherit: "default" 0.0;
             color_class: "menu_item_disabled";
          }
+         description { state: "slide1" 0.0;
+            inherit: "default" 0.0;
+            color_class: "menu_item_active";
+            rel1.relative: 0.5 0.5;
+            rel2.relative: 0.5 0.5;
+         }
+         description { state: "slide2" 0.0;
+            inherit: "default" 0.0;
+            color_class: "menu_item_active";
+            rel1.relative: -0.5 0.5;
+            rel2.relative: -0.5 0.5;
+         }
       }
    }
    programs {
       program {
          signal: "e,state,selected"; source: "e";
-         action: STATE_SET "selected" 0.0;
+         action: STATE_SET "slide1" 0.0;
          target: "arrow";
+         after: "slide1";
+      }
+      program { name: "slide1";
+         action: STATE_SET "slide2" 0.0;
+         transition: DECELERATE 0.4;
+         target: "arrow";
+         after: "slide2";
+      }
+      program { name: "slide2";
+         action: STATE_SET "slide1" 0.0;
+         transition: ACCELERATE 0.3;
+         target: "arrow";
+         after: "slide1";
       }
       program {
          signal: "e,state,unselected"; source: "e";
