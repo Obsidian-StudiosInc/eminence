@@ -265,6 +265,18 @@ color_classes {
       color: COL_BORDER_DARK;
       desc: "Menu separator";
    }
+   color_class { name: "scrollbar_arrow_active";
+      color: COL_ICON_BASIC;
+      desc: "Scrollbar arrow active color";
+   }
+   color_class { name: "scrollbar_arrow_clicked";
+      color: PURPLE_LIGHT;
+      desc: "Scrollbar arrow clicked color";
+   }
+   color_class { name: "scrollbar_arrow_inactive";
+      color: COL_ICON_BASIC_DISABLED;
+      desc: "Scrollbar arrow inactive color";
+   }
    color_class { name: "toolbar_item_border";
       color: COL_BG_DARK;
       desc: "Toolbar item border color";
