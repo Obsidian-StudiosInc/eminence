@@ -21,7 +21,7 @@
 #define COL_LIGHT_HOVER          135 135 135 255
 #define COL_LIGHT_PRESSED        COL_ENABLE
 
-#define COL_BG                    40  40  40 255
+#define COL_BG                    COL_NORM
 #define COL_BG_LIGHT              90  90  90 255
 #define COL_BG_DARK               35  35  35 255
 #define COL_BG_DARK_HOVER         25  25  25 255
@@ -30,8 +30,8 @@
 #define COL_BG_DARK_TRANS         30  30 30 180
 #define COL_BG_DARKER             30  30 30 255
 #define COL_BG_DARKER_TRANS       30  30 30 135
-#define COL_BORDER                20  20 20 255
-#define COL_BORDER_DARK           20  20 20 255
+#define COL_BORDER                COL_NORM
+#define COL_BORDER_DARK           COL_BG_DARKER
 
 #define COL_FOCUS_INLINE         135 135 135 100
 
@@ -80,8 +80,12 @@
 color_classes {
 
    color_class { name: "background";
-      color: COL_BG;
+      color: COL_BG_DARK;
       description: "Background color";
+   }
+   color_class { name: "fileman_background";
+      color: COL_BG;
+      description: "Fileman background color";
    }
    color_class { name: "text";
       color: COL_FONT_BASIC_DEFAULT;
@@ -262,20 +266,8 @@ color_classes {
       desc: "Menu item text disabled";
    }
    color_class { name: "menu_separator";
-      color: COL_BORDER_DARK;
+      color: COL_BG_LIGHT;
       desc: "Menu separator";
-   }
-   color_class { name: "scrollbar_arrow_active";
-      color: COL_ICON_BASIC;
-      desc: "Scrollbar arrow active color";
-   }
-   color_class { name: "scrollbar_arrow_clicked";
-      color: PURPLE_LIGHT;
-      desc: "Scrollbar arrow clicked color";
-   }
-   color_class { name: "scrollbar_arrow_inactive";
-      color: COL_ICON_BASIC_DISABLED;
-      desc: "Scrollbar arrow inactive color";
    }
    color_class { name: "toolbar_item_border";
       color: COL_BG_DARK;
@@ -318,7 +310,7 @@ color_classes {
       desc: "Toolbar: Text of a disabled toolbar item";
    }
    color_class { name: "toolbar_item_separator";
-      color: COL_BORDER_DARK;
+      color: COL_BG_LIGHT;
       desc: "Toolbar separator color";
    }
    color_class { name: "winlist_top_bg";
