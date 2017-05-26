@@ -823,7 +823,7 @@ group { name: "e/fileman/default/scrollframe";
    parts {
       part { name: "bg";
          description { state: "default" 0.0;
-            color_class: "background";
+            color_class: "fileman_background";
          }
       }
       part { name: "e.swallow.bg"; type: SWALLOW; insert_before: "e.swallow.content";
