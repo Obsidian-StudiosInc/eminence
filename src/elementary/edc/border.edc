@@ -377,24 +377,6 @@ group {
             color_class: "win_border_title_active";
          }
       }
-      rect { name: "event-dummy"; mouse_events: 1;
-         description { "default";
-            color: 0 0 0 0;
-            rel.to: "btn-spacer";
-         }
-      }
-      part { name: "btn-spacer";
-         type: SPACER;
-         scale: 1;
-         description { state: "default" 0.0;
-            rel1.to_y: "border_shadow_spacer";
-            rel1.relative: 0.0 1.0;
-            min: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
-            max: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD); 
-            align: 1.0 0.0;
-            fixed: 1 1;
-         }
-      }
       part { name: "e.event.titlebar";
          type: RECT;
          description { state: "default" 0.0;
@@ -889,12 +871,6 @@ group { name: "e/widgets/border/dialog/border";
             rel2.to_x: "e.event.close";
          }
       }
-      part { name: "btn-spacer";
-         desc { "default";
-            min: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
-            max: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);  
-         }
-      }
       part { name: "e.event.close";
          desc { "default";
             fixed: 1 0;
@@ -967,12 +943,6 @@ group { name: "e/widgets/border/noresize_dialog/border";
          description { state: "default" 0.0;
             min: 0 0;
             visible: 0;
-         }
-      }
-      part { name: "btn-spacer";
-         desc { "default";
-            min: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
-            max: 0 (BORDER_BTN_H + 2 * BORDER_BTN_PAD);
          }
       }
       part { name: "e.event.close";
