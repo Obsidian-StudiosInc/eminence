@@ -33,8 +33,6 @@
             desc { "default";
                image.normal: "close-btn";
                color_class: "close-btn-inactive";
-               min: (BORDER_BTN_W * 1.5) (BORDER_BTN_H * 1.5);
-               max: (BORDER_BTN_W * 1.5) (BORDER_BTN_H * 1.5);
             }
             desc { "active";
                inherit: "default";
@@ -817,7 +815,7 @@ group {
           signal: "mouse,in";
           source: "e.event.close";
           action: STATE_SET "rotated" 0.0;
-          transition: LINEAR 1.0;
+          transition: LINEAR 0.75;
           target: "e.event.close";
           after: "rotate-loop-close";
       }
