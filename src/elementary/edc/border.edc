@@ -101,46 +101,12 @@
    }
 
    group { name: "e/border/btn-minimize";
-
-      script {
-         public btmode;
-         public eval_mode(m) {
-            new i = m & INACTIVE;
-            new h = m & HOVER;
-            new p = m & PRESSED;
-
-            if (!p) {
-               if (!h) {
-                  if (!i) {
-                     set_state(PART:"base", "active", 0.0);
-                     set_state(PART:"symbol", "active", 0.0);
-                  } else {
-                     set_state(PART:"base", "default", 0.0);
-                     set_state(PART:"symbol", "default", 0.0);
-                  }
-               } else {
-                  set_state(PART:"base", "hover", 0.0);
-                  set_state(PART:"symbol", "hover", 0.0);
-               }
-            } else {
-               set_state(PART:"base", "pressed", 0.0);
-               set_state(PART:"symbol", "pressed", 0.0);
-            }
-         }
-      }
+      inherit: "e/border/btn-close";
       IMAGE_SET("minimize-dash", BORDER_BTN_W, BORDER_BTN_H)
       parts {
          image { "base"; scale: 1;
             desc { "default";
-               min: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
-               max: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
-               color: 0 0 0 0;
-            }
-         }
-         image { "symbol"; nomouse;
-            desc { "default";
                image.normal: "minimize-dash";
-               rel.to: "base";
                color_class: "minimize-inactive";
             }
             desc { "active";
@@ -157,57 +123,8 @@
             }
          }
       }
-      programs {
-         program {
-            signal: "mouse,in"; source: "base";
-            script {
-               new m = get_int(btmode);
-               m |= HOVER; set_int(btmode, m);
-               eval_mode(m);
-            }
-         }
-         program {
-            signal: "mouse,out"; source: "base";
-            script {
-               new m = get_int(btmode);
-               m &= ~HOVER; set_int(btmode, m);
-               eval_mode(m);
-            }
-         }
-         program {
-            signal: "mouse,down,*"; source: "base";
-            script {
-               new m = get_int(btmode);
-               m |= PRESSED; set_int(btmode, m);
-               eval_mode(m);
-            }
-         }
-         program {
-            signal: "mouse,up,*"; source: "base";
-            script {
-               new m = get_int(btmode);
-               m &= ~PRESSED; set_int(btmode, m);
-               eval_mode(m);
-            }
-         }
-         program {
-            signal: "e,state,focused"; source: "e";
-            script {
-               new m = get_int(btmode);
-               m &= ~INACTIVE; set_int(btmode, m);
-               eval_mode(m);
-            }
-         }
-         program {
-            signal: "e,state,unfocused"; source: "e";
-            script {
-               new m = get_int(btmode);
-               m |= INACTIVE; set_int(btmode, m);
-               eval_mode(m);
-            }
-         }
-      }
    }
+
    group { name: "e/border/btn-maximize";
       inherit: "e/border/btn-close";
       IMAGE_SET("maximize-sym", BORDER_BTN_W, BORDER_BTN_H)
