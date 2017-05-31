@@ -108,6 +108,8 @@
             desc { "default";
                image.normal: "minimize-dash";
                color_class: "minimize-inactive";
+               min: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
+               max: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
             }
             desc { "active";
                inherit: "default";
@@ -132,9 +134,9 @@
          image { "base"; scale: 1;
             desc { "default";
                image.normal: "maximize-sym";
+               color_class: "maximize-inactive";
                min: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
                max: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
-               color_class: "maximize-inactive";
             }
             desc { "active";
                inherit: "default";
