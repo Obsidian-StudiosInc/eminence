@@ -271,9 +271,9 @@ group {
          scale: 1;
          description { state: "default" 0.0;
             rel1 {
-               to: "e.event.minimize";
+               to: "e.event.maximize";
                relative: 1.0 0.0;
-               offset: 25 4;
+               offset: 5 4;
             }
             rel2 {
                to: "e.event.icon";
