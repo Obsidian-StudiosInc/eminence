@@ -306,7 +306,6 @@ group {
       group { name: "e.event.close";
          source: "e/border/btn-close";
          desc { "default";
-            fixed: 1 0;
             rel1.relative: 0.0 0.0;
             rel2.relative: 0.0 1.0;
             rel2.to_y: "top_bg";
@@ -378,7 +377,6 @@ group {
       }
       part { name: "e.event.icon"; type: RECT;
          description { state: "default" 0.0;
-            fixed: 1 0;
             rel1.relative: 1.0 0.0;
             rel2.relative: 1.0 1.0;
             rel2.to_y: "top_bg";
@@ -785,23 +783,16 @@ group { name: "e/widgets/border/dialog/border";
    alias: "e/widgets/border/modal/border";
    inherit: "e/widgets/border/default/border";
    parts {
-      part { name: "e.event.titlebar";
-         description { state: "default" 0.0;
-            rel2.to_x: "e.event.close";
-         }
-      }
       part { name: "e.event.maximize";
          description { state: "default" 0.0;
             max: 0 0;
             visible: 0;
-            fixed: 1 1;
          }
       }
       part { name: "e.event.minimize";
          description { state: "default" 0.0;
             max: 0 0;
             visible: 0;
-            fixed: 1 1;
          }
       }
    }
