@@ -271,12 +271,14 @@ group {
          scale: 1;
          description { state: "default" 0.0;
             rel1 {
-               to: "e.event.maximize";
+               to_x: "e.event.maximize";
+               to_y: "top_bg";
                relative: 1.0 0.0;
                offset: 5 4;
             }
             rel2 {
-               to: "e.event.icon";
+               to_x: "e.event.icon";
+               to_y: "top_bg";
                relative: 0.0 0.0;
                offset: -5 4;
             }
