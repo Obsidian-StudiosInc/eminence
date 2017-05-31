@@ -209,10 +209,10 @@
       }
    }
    group { name: "e/border/btn-maximize";
-      inherit: "e/border/btn-minimize";
+      inherit: "e/border/btn-close";
       IMAGE_SET("maximize-sym", BORDER_BTN_W, BORDER_BTN_H)
       parts {
-         image { "symbol"; nomouse;
+         image { "base"; scale: 1;
             desc { "default";
                image.normal: "maximize-sym";
                min: (BORDER_BTN_W * 1.25) (BORDER_BTN_H * 1.25);
