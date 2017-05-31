@@ -871,20 +871,9 @@ group { name: "e/widgets/border/dialog/border";
             rel2.to_x: "e.event.close";
          }
       }
-      part { name: "e.event.close";
-         desc { "default";
-            fixed: 1 0;
-            rel1.relative: 0.0 0.0;
-            rel2.relative: 0.0 1.0;
-            rel2.to_y: "top_bg";
-            align: 0.0 0.5;
-            aspect: 1.0 1.0; aspect_preference: VERTICAL;
-         }
-      }
       part { name: "e.event.maximize";
          description { state: "default" 0.0;
             max: 0 0;
-            aspect: 0.0 0.0;
             visible: 0;
             fixed: 1 1;
          }
@@ -892,7 +881,6 @@ group { name: "e/widgets/border/dialog/border";
       part { name: "e.event.minimize";
          description { state: "default" 0.0;
             max: 0 0;
-            aspect: 0.0 0.0;
             visible: 0;
             fixed: 1 1;
          }
@@ -925,7 +913,7 @@ group { name: "e/widgets/border/noresize/border";
 }
 
 group { name: "e/widgets/border/noresize_dialog/border";
-   inherit: "e/widgets/border/default/border";
+   inherit: "e/widgets/border/dialog/border";
    parts {
       part { name: "e.event.resize.bl";
          description { state: "default" 0.0;
@@ -945,32 +933,9 @@ group { name: "e/widgets/border/noresize_dialog/border";
             visible: 0;
          }
       }
-      part { name: "e.event.close";
-         desc { "default";
-            fixed: 1 0;
-            rel1.relative: 0.0 0.0;
-            rel2.relative: 0.0 1.0;
-            rel2.to_y: "top_bg";
-            align: 0.0 0.5;
-            aspect: 1.0 1.0; aspect_preference: VERTICAL;
-         }
-      }
-      part { name: "e.event.maximize";
-         description { state: "default" 0.0;
-            max: 0 0;
-            visible: 0;
-            fixed: 1 1;
-         }
-      }
-      part { name: "e.event.minimize";
-         description { state: "default" 0.0;
-            max: 0 0;
-            visible: 0;
-            fixed: 1 1;
-         }
-      }
    }
 }
+
 group { name: "e/widgets/border/default/move";
    images.image: "bg-rounded-3px@4.png" COMP;
    images.image: "border-rounded-3px@4.png" COMP;
