@@ -348,34 +348,28 @@ group {
             visible: 1;
          }
       }
-      spacer { name: "title_spacer";
-         scale: 1;
-         description {
-            min: BORDER_BTN_PAD BORDER_WIDTH;
-            max: BORDER_BTN_PAD BORDER_WIDTH;
-            align: 0.0 0.0;
-         }
-      }
       part { name: "e.text.title";
          type: TEXT;
          mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
             rel1 {
-               to_x: "title_spacer";
-               to_y: "btn-spacer";
+               to: "e.event.minimize";
                relative: 1.0 0.0;
+               offset: 25 4;
             }
             rel2 {
-               to: "btn-spacer";
-               relative: 0.0 1.0;
+               to: "e.event.icon";
+               relative: 0.0 0.0;
+               offset: -5 4;
             }
             color_class: "win_border_title";
+            align: 0.5 0.0;
+            min: 0 18;
             text {
                font: FN; size: 10;
                text_class: "title_bar";
-               align: 0.5 0.5;
-               min: 0 1;
+               align: 0.5 0.0;
                text: " ";
             }
             fixed: 0 1;
@@ -489,6 +483,7 @@ group {
             rel1.relative: 1.0 0.0;
             rel2.relative: 1.0 1.0;
             rel2.to_y: "top_bg";
+            rel2.offset: -1 1;
             align: 1.0 0.5;
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             color: 0 0 0 0;
