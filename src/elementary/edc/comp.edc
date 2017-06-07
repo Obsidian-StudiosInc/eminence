@@ -598,13 +598,7 @@ group { name: "e/comp/frame/still/fast";
 
 group { name: "e/comp/frame/menu";
    inherit: "e/comp/frame/popup";
-   images.image: "win_menu_shadow.png" COMP;
    parts {
-      part { name: "shadow";
-         description { state: "default" 0.0;
-            WIN_MENU_SHADOW;
-         }
-      }
       part { name: "shower";
          description { state: "default" 0.0;
             rel1.relative: 0.05 0.0;
