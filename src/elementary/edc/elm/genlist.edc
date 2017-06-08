@@ -1912,6 +1912,255 @@ ODD("elm/genlist/tree_odd/mode/default", "elm/genlist/tree/mode/default")
 COMPRESS_MODE("elm/genlist/tree_compress/mode/default", "elm/genlist/tree/mode/default")
 COMPRESS_MODE_ODD("elm/genlist/tree_compress_odd/mode/default", "elm/genlist/tree/mode/default")
 
+#define COMPRESS_SUB(_NAME, _SRC) \
+   group { name: _NAME; \
+      inherit: _SRC; \
+      parts { \
+         text { "elm.text"; \
+            desc { "default"; \
+               text.min: 0 1; \
+            } \
+            desc { "selected"; \
+               text.min: 0 1; \
+            } \
+            desc { "disabled"; \
+               text.min: 0 1; \
+            } \
+            desc { "flip_enabled"; \
+               text.min: 0 1; \
+            } \
+         } \
+         text { "elm.text.sub"; \
+            desc { "default"; \
+               text.min: 0 1; \
+            } \
+            desc { "selected"; \
+               text.min: 0 1; \
+            } \
+            desc { "disabled"; \
+               text.min: 0 1; \
+            } \
+            desc { "flip_enabled"; \
+               text.min: 0 1; \
+            } \
+         } \
+      } \
+   }
+#define COMPRESS_SUB_ODD(_NAME, _SRC) \
+   group { name: _NAME; \
+      inherit: _SRC; \
+      parts { \
+         text { "elm.text"; \
+            desc { "default"; \
+               text.min: 0 1; \
+            } \
+            desc { "selected"; \
+               text.min: 0 1; \
+            } \
+            desc { "disabled"; \
+               text.min: 0 1; \
+            } \
+            desc { "flip_enabled"; \
+               text.min: 0 1; \
+            } \
+         } \
+         text { "elm.text.sub"; \
+            desc { "default"; \
+               text.min: 0 1; \
+            } \
+            desc { "selected"; \
+               text.min: 0 1; \
+            } \
+            desc { "disabled"; \
+               text.min: 0 1; \
+            } \
+            desc { "flip_enabled"; \
+               text.min: 0 1; \
+            } \
+         } \
+         rect { "base"; \
+            desc { "default"; \
+               color_class: "list_item_base_odd"; \
+            } \
+         } \
+      } \
+   }
+
+group { "elm/genlist/item/double_label/default"; nomouse;
+   data.item: "selectraise" "on";
+   data.item: "focusraise" "on";
+   data.item: "texts" "elm.text elm.text.sub";
+   data.item: "contents" "elm.swallow.icon elm.swallow.end";
+   data.item: "treesize" TREEPAD;
+   data.item: "flips" "elm.text.flip";
+   inherit: "genlist_base";
+   parts {
+
+      //##//
+      text { "elm.text";
+         scale;
+         desc { "default";
+            rel1.offset: 2 3;
+            rel1.relative: 1.0 0.0;
+            rel1.to_x: "elm.swallow.icon";
+            rel2.offset: -3 -3;
+            rel2.relative: 0.0 0.0;
+            rel2.to_x: "elm.swallow.end";
+            rel2.to_y: "elm.text.sub";
+	    color_class: "list_item_text";
+            align: 0.0 0.0;
+            text { font: FN; size: 10;
+               min: 1 1;
+               ellipsis: -1;
+               align: 0.0 0.0;
+               text_class: "list_item";
+            }
+         }
+         desc { "selected";
+            inherit: "default";
+            color_class: "list_item_text_selected";
+            vis;
+         }
+         desc { "disabled";
+            inherit: "default";
+            color_class: "list_item_text_disabled";
+            vis;
+         }
+         desc { "flip_enabled";
+            inherit: "default";
+            hid;
+         }
+      }
+      swallow { "elm.text.flip"; mouse;
+         scale;
+         desc { "default";
+            hid;
+            rel1.to_y: "elm.text";
+            rel2.to_y: "elm.text";
+         }
+         desc { "flip_enabled";
+            inherit: "default";
+            vis;
+         }
+      }
+      text { "elm.text.sub";
+         scale;
+         desc { "default";
+            fixed: 0 1;
+            rel1.offset: 2 -3;
+            rel1.relative: 1.0 1.0;
+            rel1.to_x: "elm.swallow.icon";
+            rel2.offset: -3 -3;
+            rel2.relative: 0.0 1.0;
+            rel2.to_x: "elm.swallow.end";
+	    color_class: "list_item_text";
+            align: 0.0 1.0;
+            text { font: FN; size: 8;
+               min: 1 1;
+               ellipsis: -1;
+               align: 0.0 1.0;
+               text_class: "list_item_sub";
+            }
+         }
+         desc { "selected";
+            inherit: "default";
+            color_class: "list_item_text_selected";
+            vis;
+         }
+         desc { "disabled";
+            inherit: "default";
+            color_class: "list_item_text_disabled";
+            vis;
+         }
+         desc { "flip_enabled";
+            inherit: "default";
+            hid;
+         }
+      }
+      target_group: "subgroup" "elm.text" "elm.text.sub";
+      program {
+         signal: "elm,state,selected";
+         action: STATE_SET "selected";
+         groups: "default" "subgroup";
+      }
+      program {
+         signal: "elm,state,unselected";
+         action: STATE_SET "default";
+         groups: "default" "subgroup";
+      }
+      program {
+         signal: "elm,state,disabled";
+         action: STATE_SET "disabled";
+         groups: "default" "subgroup";
+      }
+      program {
+         signal: "elm,state,enabled";
+         action: STATE_SET "default";
+         groups: "default" "subgroup";
+      }
+      program {
+         signal: "elm,state,flip,enabled";
+         action: STATE_SET "flip_enabled";
+         groups: "default" "subgroup";
+         target: "elm.text.flip";
+      }
+      program {
+         signal: "elm,state,flip,disabled";
+         action: STATE_SET "default";
+         groups: "default" "subgroup";
+         target: "elm.text.flip";
+      }
+      //##//
+      swallow { "elm.swallow.pad"; mouse;
+         desc { "default";
+            fixed: 1 0;
+            align: 0.0 0.5;
+            rel1.offset: 2 2;
+            rel2.relative: 0.0 1.0;
+            rel2.offset: 2 -3;
+         }
+      }
+      swallow { "elm.swallow.icon"; mouse;
+         desc { "default";
+            fixed: 1 0;
+            align: 0.0 0.5;
+            aspect: 1.0 1.0;
+            rel1.to_x: "elm.swallow.pad";
+            rel1.relative: 1.0 0.0;
+            rel1.offset: -1 2;
+            rel2.to_x: "elm.swallow.pad";
+            rel2.relative: 1.0 1.0;
+            rel2.offset: -1 -3;
+            link.base: "elm,state,flip,disabled";
+         }
+         desc { "flip_enabled";
+            inherit: "default";
+            hid;
+            link.base: "elm,state,flip,enabled";
+         }
+      }
+      swallow { "elm.swallow.end"; mouse;
+         desc { "default";
+            fixed: 1 0;
+            align: 1.0 0.5;
+            aspect: 1.0 1.0;
+            rel1.offset: -3 2;
+            rel1.relative: 1.0 0.0;
+            rel2.offset: -3 -3;
+            link.base: "elm,state,flip,disabled";
+         }
+         desc { "flip_enabled";
+            inherit: "default";
+            hid;
+            link.base: "elm,state,flip,enabled";
+         }
+      }
+   }
+}
+ODD("elm/genlist/item_odd/double_label/default", "elm/genlist/item/double_label/default")
+COMPRESS_SUB("elm/genlist/item_compress/double_label/default", "elm/genlist/item/double_label/default")
+COMPRESS_SUB_ODD("elm/genlist/item_compress_odd/double_label/default", "elm/genlist/item/double_label/default")
+
 #define COMPRESS_T1T2(_NAME, _SRC) \
    group { name: _NAME; \
       inherit: _SRC; \
