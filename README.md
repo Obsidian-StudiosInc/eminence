@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/Obsidian-StudiosInc/eminence/master.svg?colorA=9977bb&style=plastic)](https://travis-ci.org/Obsidian-StudiosInc/eminence)
 [![Build Status](https://img.shields.io/shippable/58fa9a131fb3ec0700df16e7/master.svg?colorA=9977bb&style=plastic)](https://app.shippable.com/github/Obsidian-StudiosInc/eminence)
 
-This is a dark them with purple icons and some purple highlights. It is 
+This is a dark theme with purple icons and some purple highlights. It is 
 meant to be easy on the eyes, and ideally light weight. This theme is a 
 work in progress.
 
