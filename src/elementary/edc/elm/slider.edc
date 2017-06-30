@@ -33,6 +33,7 @@ group { name: "elm/slider/hidden/limit";
 
 group { name: "elm/slider/horizontal/default";
    alias: "elm/slider/horizontal/disabled";
+   alias: "elm/slider/range/horizontal/default";
    alias: "elm/slider/horizontal/media_player/position/default";
    alias: "elm/slider/horizontal/media_player/position/flush";
    alias: "elm/slider/horizontal/media_player/volume/default";
@@ -998,6 +999,7 @@ group { name: "elm/slider/horizontal/indicator/default";
 
 group { name: "elm/slider/vertical/default";
    alias: "elm/slider/vertical/disabled";
+   alias: "elm/slider/range/vertical/default";
    alias: "elm/slider/vertical/media_player/position/default";
    alias: "elm/slider/vertical/media_player/position/flush";
    alias: "elm/slider/vertical/media_player/volume/default";
