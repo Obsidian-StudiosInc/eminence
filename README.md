@@ -27,6 +27,8 @@ and personal preferences.
 See [releases](https://github.com/Obsidian-StudiosInc/eminence/releases) 
 to download themes.
 
+![A screenshot of Eminence Theme](https://user-images.githubusercontent.com/12835340/28030854-6c079512-6573-11e7-8851-8311662ec359.jpg)
+
 ## Building
 For the time being you will need to copy the
 [assets directory](https://github.com/LeBlue/enlightenment-arc-theme/tree/master/assets),
