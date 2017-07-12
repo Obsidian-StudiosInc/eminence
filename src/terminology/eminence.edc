@@ -1338,6 +1338,7 @@ collections {
                image.border_scale_by: 0.1;
                fill.smooth: 0;
                visible: 0;
+               color: 255 255 255 180;
             }
             description { state: "visible" 0.0;
                inherit: "default" 0.0;
@@ -1353,11 +1354,8 @@ collections {
                fixed: 1 1;
                rel1.to: "terminology.popmedia";
                rel2.to: "terminology.popmedia";
-               image.normal: "bg_shadow.png";
-               fill {
-                  size.relative: 0.0 0.0;
-                  size.offset: 64 64;
-               }
+               image.normal: "bg_shadow3.png";
+               color: 255 255 255 180;
             }
          }
          part { name: "terminology.popmedia"; type: SWALLOW;
