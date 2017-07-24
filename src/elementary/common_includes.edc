@@ -49,7 +49,7 @@
 // #include "edc/elm/index.edc"
 // #include "edc/elm/calendar.edc"
 // #include "edc/elm/layout.edc"
-// #include "edc/elm/progress.edc"
+#include "edc/elm/progress.edc"
 #include "edc/elm/naviframe.edc"
 #include "edc/elm/panel.edc"
 #include "edc/elm/popup.edc"
