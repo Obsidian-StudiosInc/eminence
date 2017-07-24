@@ -691,6 +691,14 @@ color_classes {
       color: COL_PRESSED;
       desc: "Progress bar";
    }
+   color_class { name: "progress_status";
+      color: COL_FONT_BASIC_HIGHLIGHT_CLICKED;
+      desc: "Progress status";
+   }
+   color_class { name: "progressbar_text_disabled";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Progress bar text disabled";
+   }
    color_class { name: "slider_base";
       color: COL_BG_DARKER;
       desc: "Slider base";
