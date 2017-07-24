@@ -14,7 +14,7 @@
 #include "edc/elm/check.edc"
 #include "edc/elm/slider.edc"
 #include "edc/elm/radio.edc"
-// #include "edc/elm/bubble.edc"
+#include "edc/elm/bubble.edc"
 #include "edc/elm/panes.edc"
 #include "edc/elm/toolbar.edc"
 #include "edc/elm/genlist.edc"
