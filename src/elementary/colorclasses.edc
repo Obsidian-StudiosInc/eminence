@@ -953,4 +953,12 @@ color_classes {
       color: COL_FONT_BASIC_INACTIVE;
       desc: "Calendar weekend";
    }
+   color_class { name: "bubble_info";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Bubble information";
+   }
+   color_class { name: "bubble_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Bubble text";
+   }
 }
