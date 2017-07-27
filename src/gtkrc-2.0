@@ -1,0 +1,41 @@
+# Eminence theme GTK 2.0 RC file
+# 2017 Obsidian-Studios, Inc.
+
+gtk-can-change-accels=1
+gtk-theme-name="Adwaita-dark"
+gtk-icon-theme-name="oxygen"
+gtk-fallback-icon-theme="Adwaita"
+gtk-font-name="Noto Sans 10"
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-menu-images=1
+gtk-button-images=1
+
+style "my_style" {
+	base[ACTIVE]	= "#966edc"
+	base[INSENSITIVE]	= "#FF0000"
+	base[NORMAL]	= "#282828"
+	base[PRELIGHT]	= "#282828"
+	base[SELECTED]	= "#966edc"
+
+	bg[ACTIVE]	= "#232323"
+	bg[INSENSITIVE]	= "#232323"
+	bg[NORMAL]	= "#232323"
+	bg[PRELIGHT]	= "#232323"
+	bg[SELECTED]	= "#966edc"
+
+	fg[ACTIVE]	= "#eeeeee"
+	fg[INSENSITIVE]	= "#74757b"
+	fg[NORMAL]	= "#eeeeee"
+	fg[PRELIGHT]	= "#eeeeee"
+#	fg[SELECTED]	= "#ffffff"
+
+#	text[ACTIVE]	= "#ffffff"
+	text[INSENSITIVE]	= "#0000ff"
+#	text[NORMAL]	= "#ffffff"
+#	text[PRELIGHT]	= "#eeeeee"
+#	text[SELECTED]	= "#ffffff"
+
+	font_name="Noto Sans"
+}
+
+widget_class "*" style "my_style"
