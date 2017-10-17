@@ -233,7 +233,7 @@ group { name: "elm/menu/separator/default";
             min: 1 1;
             rel1.offset: 0 2;
             rel2.offset: -1 -3;
-            color_class: "menu_item_border";
+            color_class: "menu_separator";
          }
       }
    }
