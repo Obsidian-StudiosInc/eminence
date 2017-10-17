@@ -52,30 +52,13 @@ group { name: "elm/menu/item/default";
             visible: 0;
          }
       }
-      // XXX: check/radio goes next (right of) content, no radio/check handle
-      // XXX: need to handle no text?
-      // XXX: need arrowspace on/off based on submenus in menu
-      part { name: "arrowspace"; type: SPACER;
-         scale: 1;
-         description { state: "default" 0.0;
-            fixed: 1 1;
-            min: 14 14;
-            max: 14 14;
-            rel1.offset: -2 0;
-            rel1.relative: 1.0 0.0;
-            rel2.offset: -2 -1;
-            align: 1.0 0.5;
-         }
-      }
       part { name: "elm.text"; type: TEXT; mouse_events:  0;
          scale: 1;
          description { state: "default" 0.0;
             rel1.to_x: "elm.swallow.content";
             rel1.relative: 1.0 0.0;
             rel1.offset: 5 -1;
-            rel2.to_x: "arrowspace";
-            rel2.offset: -6 -1;
-            rel2.relative: 0.0 1.0;
+            rel2.offset: -26 -1;
             color_class: "menu_item";
             text { font: FN; size: 10;
                min: 1 1;
@@ -190,25 +173,52 @@ group { name: "elm/menu/item/default";
 
 group { name: "elm/menu/item_with_submenu/default";
    inherit: "elm/menu/item/default";
-//   alias: "elm/menu/main_menu_submenu/default";
    images {
       image: "arrow-right.png" COMP;
    }
    parts {
-      part { name: "arrow";
+      image { name: "arrow";
          description { state: "default" 0.0;
-            rel1.to: "arrowspace";
-            rel2.to: "arrowspace";
+            rel1.to_x: "elm.text";
+            rel1.relative: 1 0;
+            rel1.offset: 8 0;
             image.normal: "arrow-right.png";
+            min: 16 16;
+            max: 16 16;
             color_class: "menu_item_inactive";
          }
          description { state: "active" 0.0;
             inherit: "default" 0.0;
             color_class: "menu_item_active";
          }
+         description { state: "slide1" 0.0;
+            inherit: "active" 0.0;
+         }
+         description { state: "slide2" 0.0;
+            inherit: "active" 0.0;
+            rel1.offset: -8 0;
+         }
       }
    }
    programs {
+      program {
+         signal: "mouse,in"; source: "event";
+         action: STATE_SET "slide1" 0.0;
+         target: "arrow";
+         after: "slide1";
+      }
+      program { name: "slide1";
+         action: STATE_SET "slide2" 0.0;
+         transition: DECELERATE 0.4;
+         target: "arrow";
+         after: "slide2";
+      }
+      program { name: "slide2";
+         action: STATE_SET "slide1" 0.0;
+         transition: ACCELERATE 0.3;
+         target: "arrow";
+         after: "slide1";
+      }
       program { name: "selected";
          target: "arrow";
       }
@@ -278,30 +288,13 @@ group { name: "elm/menu/main_menu_submenu/default";
             visible: 0;
          }
       }
-      // XXX: check/radio goes next (right of) content, no radio/check handle
-      // XXX: need to handle no text?
-      // XXX: need arrowspace on/off based on submenus in menu
-      part { name: "arrowspace"; type: SPACER;
-         scale: 1;
-         description { state: "default" 0.0;
-            fixed: 1 1;
-            min: 14 14;
-            max: 14 14;
-            rel1.offset: -2 0;
-            rel1.relative: 1.0 0.0;
-            rel2.offset: -2 -1;
-            align: 1.0 0.5;
-         }
-      }
       part { name: "elm.text"; type: TEXT; mouse_events:  0;
          scale: 1;
          description { state: "default" 0.0;
             rel1.to_x: "elm.swallow.content";
             rel1.relative: 1.0 0.0;
             rel1.offset: 5 -1;
-            rel2.to_x: "arrowspace";
-            rel2.offset: -6 -1;
-            rel2.relative: 0.0 1.0;
+            rel2.offset: -26 -1;
             color_class: "menu_item";
             text { font: FN; size: 10;
                min: 1 1;
