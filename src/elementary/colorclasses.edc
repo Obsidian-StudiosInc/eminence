@@ -431,6 +431,38 @@ color_classes {
       color: COL_FONT_BASIC_HIGHLIGHT_DISABLED;
       desc: "Button text of a disabled anchor link";
    }
+   color_class { name: "multibuttonentry_bg";
+      color: COL_BG_DARK;
+      desc: "Multibuttonentry background";
+   }
+   color_class { name: "multibuttonentry_label";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Multibuttonentry text";
+   }
+   color_class { name: "multibuttonentry_item_bg";
+      color: COL_NORM;
+      desc: "Multibuttonentry background";
+   }
+   color_class { name: "multibuttonentry_item_bg_selected";
+      color: COL_PRESSED;
+      desc: "Multibuttonentry background selected";
+   }
+   color_class { name: "multibuttonentry_item_close";
+      color: COL_BORDER_DARK;
+      desc: "Multibuttonentry close";
+   }
+   color_class { name: "multibuttonentry_item_text";
+      color: COL_FONT_BASIC_DEFAULT;
+      desc: "Multibuttonentry item text";
+   }
+   color_class { name: "multibuttonentry_item_text_pressed";
+      color: COL_FONT_BASIC_PRESSED;
+      desc: "Multibuttonentry item pressed text";
+   }
+   color_class { name: "multibuttonentry_item_text_disabled";
+      color: COL_FONT_BASIC_DISABLED;
+      desc: "Multibuttonentry item disabled text";
+   }
    color_class { name: "seg_ctrl_base";
       color: COL_NORM;
       desc: "Segment Control background";
