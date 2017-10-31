@@ -129,7 +129,7 @@
 // #include "edc/randr.edc"
 #include "edc/notification.edc"
 // #include "edc/cpufreq.edc"
-// #include "edc/temperature.edc"
+#include "edc/temperature.edc"
 // #include "edc/backlight.edc"
 #include "edc/mixer.edc"
 #include "edc/battery.edc"
