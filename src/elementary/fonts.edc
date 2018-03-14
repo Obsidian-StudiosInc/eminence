@@ -3,6 +3,7 @@
 #define FNBD   "Noto Sans:style=Bold"
 #define FNIT   "Noto Sans:style=Oblique"
 #define FNBDIT "Noto Sans:style=Bold Italic"
+#define FNMONO "Noto Mono"
 
 #define COL_FONT_BASIC_DEFAULT                                 211 218 227 255
 #define COL_FONT_BASIC_PRESSED                                 255 255 255 255
