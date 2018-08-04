@@ -592,14 +592,10 @@ group { name: "elm/hover/base/main_menu/default";
             rel1.offset: -1 -2;
          }
       }
-      part { name: "base";
+      part { name: "base"; type: RECT;
          description { state: "default" 0.0;
             rel1.to_y: "bottom";
             rel2.to_y: "bottom";
-            image.normal: "bg-rounded-3px.png";
-            image.border: 3 3 3 3;
-            image.middle: 1;
-            fill.smooth: 0;
             color_class: "menu_base";
          }
       }
@@ -611,10 +607,6 @@ group { name: "elm/hover/base/main_menu/default";
             rel1.offset: 0 0;
             rel2.to: "elm.swallow.slot.bottom";
             rel2.offset: -1 -1;
-            image.normal: "border-rounded-3px.png";
-            image.border: 3 3 3 3;
-            image.middle: 0;
-            fill.smooth: 0;
             color_class: "menu_border";
          }
       }
