@@ -20,7 +20,7 @@ group { name: "elm/code/layout/default";
 }
 
 color_classes {
-    color_class { name: "elm/code/status/default"; color: COL_BG_DARK; }
+    color_class { name: "elm/code/status/default"; color: COL_BG; }
     color_class { name: "elm/code/status/current"; color: COL_BG; }
     color_class { name: "elm/code/status/ignored"; color: COL_BG_DARK; }
     color_class { name: "elm/code/status/note"; color: 221 119 17 255;  }
