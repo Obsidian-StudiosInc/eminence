@@ -73,7 +73,7 @@ group { "elm/multibuttonentry/btn/default";
    images.image: "win_glow.png" COMP;
    styles {
       style { "multibuttonentry_textblock_style";
-         base: "font="FN" align=0.5 font_size=10 color=#ffffffff style=shadow,bottom shadow_color=#00000080 text_class=multibuttonentry_item ellipsis=1.0";
+         base: "font="FN" align=0.5 font_size="FS" color=#ffffffff style=shadow,bottom shadow_color=#00000080 text_class=multibuttonentry_item ellipsis=1.0";
          tag: "br" "\n";
          tag: "ps" "ps";
          tag: "hilight" "+ font="FNBD;
@@ -367,7 +367,7 @@ group { "elm/multibuttonentry/btn/default";
 group { "elm/multibuttonentry/closedbutton/default";
    styles {
       style { "textblock_style_multibuttonentry_default";
-         base: "font="FNBD" font_size=10 text_class=multibuttonentry_closed style=glow color=#966edcff glow_color=#966edc18 align=center glow2_color=#966edc12 wrap=char";
+         base: "font="FNBD" font_size="FS" text_class=multibuttonentry_closed style=glow color=#966edcff glow_color=#966edc18 align=center glow2_color=#966edc12 wrap=char";
          tag: "br" "\n";
          tag: "ps" "ps";
          tag: "hilight" "+ font="FNBD;

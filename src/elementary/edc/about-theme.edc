@@ -2,7 +2,7 @@ group { name: "e/theme/about";
    min: 400 320;
    styles {
       style { name: "about-theme-style";
-         base: "font="FN" font_size=10 text_class=label_style align=center color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word";
+         base: "font="FN" font_size="FS" text_class=label_style align=center color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word";
          tag: "br"      "\n";
          tag: "b"       "+ font="FNBD"";
          tag: "hilight" "+ font="FNBD" text_class=tb_light";

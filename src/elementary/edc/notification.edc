@@ -19,7 +19,7 @@ group { name: "e/modules/notification/main";
    data.item: "shaped" "1";
    styles {
       style { name: "notification_style_nowrap";
-         base: "font="FN" font_size=10 align=left color=#ffff wrap=none text_class=notification_body";
+         base: "font="FN" font_size="FS" align=left color=#ffff wrap=none text_class=notification_body";
          tag:  "subject"  "+ text_class=module_large style=glow color=#966edcff align=center";
          tag:  "body"  "+ text_class=module_normal";
          tag:  "br" "\n";
@@ -31,7 +31,7 @@ group { name: "e/modules/notification/main";
          tag:  "a" ""; // links not supported
       }
       style { name: "notification_style";
-         base: "font="FN" font_size=10 align=left color=#ffff wrap=word text_class=notification_body";
+         base: "font="FN" font_size="FS" align=left color=#ffff wrap=word text_class=notification_body";
          tag:  "subject"  "+ text_class=module_large color=#966edcff glow_color=#966edc18 align=center";
          tag:  "body"  "+ text_class=module_normal";
          tag:  "br" "\n";

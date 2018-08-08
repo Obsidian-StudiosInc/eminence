@@ -463,23 +463,23 @@ group { name: "elm/entry/base/default";
 
    styles {
       style { name: "entry_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
          ENABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_nowrap_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
          ENABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_disabled_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
          DISABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_nowrap_disabled_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
          DISABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_guide_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=word text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
          DISABLED_TEXTBLOCK_TAGS
       }
    }
@@ -581,15 +581,15 @@ group { name: "elm/entry/base-mixedwrap/default";
    inherit: "elm/entry/base/default";
    styles {
       style { name: "entry_style_mixedwrap";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
          ENABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_disabled_style_mixedwrap";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
          DISABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_guide_style_mixedwrap";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=mixed text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
          DISABLED_TEXTBLOCK_TAGS
       }
    }
@@ -632,15 +632,15 @@ group { name: "elm/entry/base-charwrap/default";
    inherit: "elm/entry/base/default";
    styles {
       style { name: "entry_style_charwrap";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX"wrap=char text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX"wrap=char text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
          ENABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_disabled_style_charwrap";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=char text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=char text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
          DISABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_guide_style_charwrap";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=char text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=char text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
          DISABLED_TEXTBLOCK_TAGS
       }
    }
@@ -720,15 +720,15 @@ group { name: "elm/entry/base-single/default";
    inherit: "elm/entry/base/default";
    styles {
       style { name: "entry_single_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=none text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=none text_class=entry_text color_class=entry_text left_margin=2 right_margin=2";
          ENABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_single_disabled_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=none text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=none text_class=entry_text_disabled color_class=entry_text_disabled left_margin=2 right_margin=2";
          DISABLED_TEXTBLOCK_TAGS
       }
       style { name: "entry_single_guide_style";
-         base: "font="FN" font_size=10 color="COL_FONT_BASIC_DEFAULT_HEX" wrap=none text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
+         base: "font="FN" font_size="FS" color="COL_FONT_BASIC_DEFAULT_HEX" wrap=none text_class=entry_guide_text color_class=entry_guide_text left_margin=2 right_margin=2 ellipsis=0.0";
          DISABLED_TEXTBLOCK_TAGS
       }
    }
