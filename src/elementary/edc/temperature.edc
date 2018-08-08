@@ -44,7 +44,7 @@ group { name: "e/modules/temperature/main";
          description { state: "default" 0.0;
             color_class: "module_label_invisible";
             color3: 255 255 255 255;
-            text { font: FN; size: 9;
+            text { font: FN; size: FS_90;
                fit: 1 1;
                ellipsis: -1;
                text_class: "module_small";

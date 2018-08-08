@@ -2055,7 +2055,7 @@ group { "elm/genlist/item/double_label/default"; nomouse;
             rel2.to_x: "elm.swallow.end";
 	    color_class: "list_item_text";
             align: 0.0 1.0;
-            text { font: FN; size: 8;
+            text { font: FN; size: FS_80;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 1.0;
