@@ -77,7 +77,7 @@ process_edj() {
 
 	# Sed edc files
 	local f FILES
-	FILES=( "$(find . -name '*.edc' -type f )" )
+	mapfile -t FILES < <(find . -name '*.edc' -type f )
 	for f in "${FILES[@]}"; do
 		sed -i -e "s|5[1,2] 153 255|${RGB}|g" \
 			-e "s|3399ff|${HTML}|g" \
