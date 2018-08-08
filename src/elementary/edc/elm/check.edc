@@ -165,7 +165,7 @@ group { name: "elm/check/base/default";
          description { state: "default" 0.0;
             fixed: 1 1;
             visible: 0;
-            text { font: FN; size: 10;
+            text { font: FN; size: FS;
                min: 0 0;
                text_class: "check_text";
             }
@@ -199,7 +199,7 @@ group { name: "elm/check/base/default";
             rel1.relative: 1.0 0.0;
             rel2.offset: -3 -3;
             color_class: "check_text";
-            text { font: FN; size: 10;
+            text { font: FN; size: FS;
               min: 0 0;
               align: 0.0 0.5;
               text_class: "check";
@@ -528,7 +528,7 @@ IMAGE_SET("toggle-background", 50, 20)
          description { state: "default" 0.0;
             fixed: 1 1;
             visible: 0;
-            text { font: FN; size: 10;
+            text { font: FN; size: FS;
                min: 0 0;
                text_class: "check_text";
             }
@@ -564,7 +564,7 @@ IMAGE_SET("toggle-background", 50, 20)
             rel2.relative: 0.0 1.0;
             rel2.offset: -5 -3;
             color_class: "check_text";
-            text { font: FN; size: 10;
+            text { font: FN; size: FS;
               min: 0 0;
               align: 0.0 0.5;
               text_class: "check";

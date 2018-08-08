@@ -358,7 +358,7 @@ group { name: "e/widgets/toolbar/item";
             rel2.offset: -5 -3;
             align: 0.5 1.0;
             color_class: "toolbar_item";
-            text { font: FN; size: 10;
+            text { font: FN; size: FS;
                min: 1 1;
                ellipsis: -1;
                align: 0.5 0.5;

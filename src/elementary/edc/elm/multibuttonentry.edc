@@ -34,7 +34,7 @@ group { "elm/multibuttonentry/label/default";
          desc { state: "default" 0.0;
             color: FN_COL_HIGHLIGHT;
             color_class: "multibuttonentry_label";
-            text { font: FNBD; size: 10;
+            text { font: FNBD; size: FS;
                min: 1 1;
                ellipsis: -1;
                align: 0.5 0.5;
@@ -56,7 +56,7 @@ group { "elm/multibuttonentry/guidetext/default";
             rel1.offset: 2 2;
             rel2.offset: -4 -4;
             color: COL_FONT_BASIC_DISABLED;
-            text { font: FNBD; size: 10;
+            text { font: FNBD; size: FS;
                min: 0 1;
                align: 0.0 0.5;
             }

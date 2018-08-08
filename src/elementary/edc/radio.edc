@@ -67,7 +67,7 @@ group { name: "e/widgets/radio";
             rel1.relative: 1.0 0.0;
             rel2.offset: -3 -3;
             color_class: "radio_text";
-            text { font: FN; size: 10;
+            text { font: FN; size: FS;
                min: 1 1;
                ellipsis: -1;
                align: 0.0 0.5;

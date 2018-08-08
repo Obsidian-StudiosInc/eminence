@@ -9,7 +9,7 @@ group { name: "e/comp/preview";
          effect: SHADOW BOTTOM;
          description { state: "default" 0.0;
             color: FN_COL_DEFAULT;
-            text { font: FNBD; size: 10;
+            text { font: FNBD; size: FS;
                text_class: "fileman_icon";
                align: 0.5 0.5;
                min: 1 1;
