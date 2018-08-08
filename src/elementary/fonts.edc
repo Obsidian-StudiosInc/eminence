@@ -1,5 +1,13 @@
 
 #define FS     10
+#define FS_70  (FS * 7 / 100)
+#define FS_80  (FS * 8 / 100)
+#define FS_90  (FS * 9 / 100)
+#define FS_110 (FS * 11 / 100)
+#define FS_120 (FS * 12 / 100)
+#define FS_140 (FS * 14 / 100)
+#define FS_180 (FS * 18 / 100)
+#define FS_260 (FS * 26 / 100)
 
 #define FN     "Noto Sans"
 #define FNBD   "Noto Sans:style=Bold"
@@ -35,12 +43,12 @@
    tag: "link" "+ color=#966edc underline=on underline_color=#966edc";     \
    tag: "preedit" "+ underline=on underline_color=#966edc";                \
    tag: "preedit_sel" "+ backing=on backing_color=#000000 color=#ffffff";  \
-   tag: "title" "+ font_size=26";                                          \
-   tag: "subtitle" "+ font_size=18";                                       \
-   tag: "bigger" "+ font_size=12";                                         \
-   tag: "big" "+ font_size=11";                                            \
-   tag: "small" "+ font_size=8";                                           \
-   tag: "smaller" "+ font_size=7";                                         \
+   tag: "title" "+ font_size="FS_260";                                     \
+   tag: "subtitle" "+ font_size="FS_180";                                  \
+   tag: "bigger" "+ font_size="FS_120";                                    \
+   tag: "big" "+ font_size="FS_110";                                       \
+   tag: "small" "+ font_size="FS_80";                                      \
+   tag: "smaller" "+ font_size="FS_70 ";                                   \
    tag: "name" "+ color=#888888 font_weight=Bold";                         \
    tag: "val" "+ color=#ffffff";                                           \
    tag: "info" "+ color=#966edc style=glow glow_color=#966edc30";          \
@@ -68,12 +76,12 @@
    tag: "link" "+ color=#101820 shadow_color=#66aaff28 underline=on underline_color=#101820"; \
    tag: "preedit" "+ underline=on underline_color=#966edc88";              \
    tag: "preedit_sel" "+ backing=on backing_color=#000000 color=#888888";  \
-   tag: "title" "+ font_size=26";                                          \
-   tag: "subtitle" "+ font_size=18";                                       \
-   tag: "bigger" "+ font_size=12";                                         \
-   tag: "big" "+ font_size=11";                                            \
-   tag: "small" "+ font_size=8";                                           \
-   tag: "smaller" "+ font_size=7";                                         \
+   tag: "title" "+ font_size="FS_260";                                     \
+   tag: "subtitle" "+ font_size="FS_180";                                  \
+   tag: "bigger" "+ font_size="FS_120";                                    \
+   tag: "big" "+ font_size="FS_110";                                       \
+   tag: "small" "+ font_size="FS_80";                                      \
+   tag: "smaller" "+ font_size="FS_70 ";                                   \
    tag: "name" "+ color=#151515 font_weight=Bold";                         \
    tag: "val" "+ color=#151515";                                           \
    tag: "info" "+ color=#966edc60 style=glow glow_color=#966edc18";        \
