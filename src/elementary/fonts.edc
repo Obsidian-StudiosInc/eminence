@@ -1,4 +1,6 @@
 
+#define FS     10
+
 #define FN     "Noto Sans"
 #define FNBD   "Noto Sans:style=Bold"
 #define FNIT   "Noto Sans:style=Oblique"
