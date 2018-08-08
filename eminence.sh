@@ -88,6 +88,7 @@ process_edj() {
 				-e 's|"Sans:style=Bold"|FNBD|g' \
 				-e 's|Sans:style=Bold|FNBD;|g' \
 				-e 's|size: 10;|size: FS;|g' \
+				-e 's|font_size=10|font_size="FS"|g' \
 				"${f}"
 		fi
 	done
