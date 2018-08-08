@@ -84,6 +84,7 @@ process_edj() {
 			"${f}"
 		if [[ "${f}" != *terminology* ]] && \
 		[[ "${f}" != *fonts.edc ]]; then
+			local i
 			sed -i -e 's|"Sans"|FN|g' \
 				-e 's|Sans;|FN;|g' \
 				-e 's|"Sans:style=Bold"|FNBD|g' \
@@ -91,6 +92,11 @@ process_edj() {
 				-e 's|size: 10;|size: FS;|g' \
 				-e 's|font_size=10|font_size="FS"|g' \
 				"${f}"
+			for i in 7 8 9 11 12 14 18 26; do
+				sed -i -e 's|size: '${i}';|size: FS_'${i}'0;|g' \
+					-e 's|font_size='${i}'|font_size="FS_'${i}'0"|g' \
+					"${f}"
+			done
 		fi
 	done
 
