@@ -82,7 +82,8 @@ process_edj() {
 		sed -i -e "s|5[1,2] 153 255|${RGB}|g" \
 			-e "s|3399ff|${HTML}|g" \
 			"${f}"
-		if [[ ! "${f}" =~ fonts.edc ]]; then
+		if [[ "${f}" != *terminology* ]] && \
+		[[ "${f}" != *fonts.edc ]]; then
 			sed -i -e 's|"Sans"|FN|g' \
 				-e 's|Sans;|FN;|g' \
 				-e 's|"Sans:style=Bold"|FNBD|g' \
